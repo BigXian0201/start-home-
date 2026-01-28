@@ -1,0 +1,175 @@
+{
+  "mod": {
+    "name": "STARTHOME！开始建家！",
+    "version": "v1.0.0",
+    "author": "BigXian喵大仙",
+    "desc": "点击跳转链接",
+    "note": "模组介绍页作者：MOONCAKE",
+    "links": [
+      {
+        "label": "Steam 创意工坊",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3592711432"
+      },
+      {
+        "label": "QQ群",
+        "url": "https://qm.qq.com/q/6FzIK0hyXm"
+      }
+    ]
+  },
+  "categories": [
+    "全部",
+    "建筑",
+    "工具",
+    "魔法",
+    "材料",
+    "装饰",
+    "储物方案",
+    "其他"
+  ],
+  "items": [
+    {
+      "id": "王母娘娘的昆仑玉簪",
+      "name": "王母娘娘的昆仑玉簪",
+      "category": [
+        "工具",
+        "魔法"
+      ],
+      "detail": "1) 右键开启可以转换陆地与海洋\n2)自带无上限存放地皮的容器，放入地皮可在将海洋转换为陆地时自动使用\n3)塞入不同颜色的宝石解锁不同颜色的照明，范围随宝石数量增多而变大\n4)移动速度+25%",
+      "images": [
+        "images/bigxians/icon/bigxian_kunlun_hairpin.png",
+        "images/bigxians/show/kunlun_hairpin_1.png",
+        "images/bigxians/show/kunlun_hairpin_2.png",
+        "images/bigxians/show/kunlun_hairpin_3.png",
+        "images/bigxians/show/kunlun_hairpin_4.png",
+        "images/bigxians/show/kunlun_hairpin_5.png",
+        "images/bigxians/show/kunlun_hairpin_6.png",
+        "images/bigxians/show/kunlun_hairpin_7.png"
+      ],
+      "recipe": {
+        "station": "暗影操控器[images/inventoryimages3/researchlab3.png]",
+        "cost": [
+          {
+            "name": "紫宝石[images/inventoryimages2/purplegem.png]",
+            "count": 3
+          },
+          {
+            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
+            "count": 10
+          },
+          {
+            "name": "噩梦燃料[images/inventoryimages2/nightmarefuel.png]",
+            "count": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "实木长条餐桌",
+      "name": "实木长条餐桌",
+      "category": [
+        "建筑",
+        "储物方案"
+      ],
+      "detail": "1) 9格子的箱子\n2)食物料理永久保鲜\n3)物品可堆叠、能放置任意物品\n4)配有专属ui",
+      "images": [
+        "images/bigxians/icon/bigxian_desk.png",
+        "images/bigxians/show/bigxian_desk_1.png",
+        "images/bigxians/show/bigxian_desk_2.png"
+      ],
+      "recipe": {
+        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "cost": [
+          {
+            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "count": 10
+          },
+          {
+            "name": "木板[images/inventoryimages1/boards.png]",
+            "count": 3
+          },
+          {
+            "name": "石砖[images/inventoryimages1/cutstone.png]",
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "花几",
+      "name": "花几",
+      "category": [
+        "建筑",
+        "储物方案"
+      ],
+      "detail": "1) 单格的箱子\n2)食物料理永久保鲜\n3)物品可堆叠、能放置任意物品",
+      "images": [
+        "images/bigxians/icon/huaji.png",
+        "images/bigxians/show/huaji_3.png",
+        "images/bigxians/show/huaji_1.png",
+        "images/bigxians/show/huaji_2.png"
+      ],
+      "recipe": {
+        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "cost": [
+          {
+            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "count": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "芍药",
+      "name": "芍药",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1) 单纯的装饰，无法引来蝴蝶\n2)可种植于地面，通过右键操作可拿起来，也能放置在容器内。\n3)后续会陆续再出几种花、凑够9个！",
+      "images": [
+        "images/bigxians/icon/shaoyao.png",
+        "images/bigxians/show/shaoyao.png"
+      ],
+      "recipe": {
+        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "cost": [
+          {
+            "name": "花瓣[images/inventoryimages2/petals.png]",
+            "count": 5
+          },
+          {
+            "name": "石砖[images/inventoryimages1/cutstone.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "老木匠的传家宝",
+      "name": "老木匠的传家宝",
+      "category": [
+        "建筑",
+        "储物方案"
+      ],
+      "detail": "1)20格子的箱子、不保鲜、可以堆叠、能放置任意物品\n2)配有专属ui\n3)超超超极大的展示柜子。能把你搜罗来的宝贝全部都展示出来！\n4)保留该物品原有的落地动画效果",
+      "images": [
+        "images/bigxians/icon/chuanjiabao.png",
+        "images/bigxians/show/chuanjiabao_1.png",
+        "images/bigxians/show/chuanjiabao_2.png",
+        "images/bigxians/show/chuanjiabao_3.png"
+      ],
+      "recipe": {
+        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "cost": [
+          {
+            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "count": 2
+          },
+          {
+            "name": "木板[images/inventoryimages1/boards.png]",
+            "count": 8
+          }
+        ]
+      }
+    }
+  ]
+}
