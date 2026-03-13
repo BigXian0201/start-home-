@@ -170,6 +170,33 @@
           }
         ]
       }
+    },
+    {
+      "id": "老渔翁的家藏珍",
+      "name": "老渔翁的家藏珍",
+      "category": [
+        "建筑",
+        "储物方案"
+      ],
+      "detail": "1)无限格子的保鲜鱼缸\n2)可以装饰，装饰品跟雪人通用\n3)宝贝谁再说你是空军我第一个不服\n4)用锤子敲它",
+      "images": [
+        "images/bigxians/icon/64x64图标栏.png",
+        "images/bigxians/show/fishbox.png",
+        "images/bigxians/show/超大展示鱼缸.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "冰块[images/inventoryimages2/ice.png]",
+            "count": 2
+          },
+          {
+            "name": "木板[images/inventoryimages1/boards.png]",
+            "count": 3
+          }
+        ]
+      }
     }
   ]
 }
