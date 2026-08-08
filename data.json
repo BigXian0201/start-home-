@@ -1,7 +1,7 @@
 {
   "mod": {
     "name": "STARTHOME！开始建家！",
-    "version": "v1.0.0",
+    "version": "v1.2.3",
     "author": "BigXian喵大仙",
     "desc": "点击跳转链接",
     "note": "模组介绍页作者：MOONCAKE--联系方式：QQ：2479261501",
@@ -64,8 +64,8 @@
       }
     },
     {
-      "id": "实木长条餐桌",
-      "name": "实木长条餐桌",
+      "id": "实木长条桌",
+      "name": "实木长条桌",
       "category": [
         "建筑",
         "储物方案"
@@ -101,18 +101,20 @@
         "建筑",
         "储物方案"
       ],
-      "detail": "1) 单格的箱子\n2)食物料理永久保鲜\n3)物品可堆叠、能放置任意物品",
+      "detail": "1) 单格的箱子\n2)食物料理永久保鲜\n3)物品可堆叠、能放置任意物品\n4)拥有皮肤：铁艺、乡村",
       "images": [
         "images/bigxians/icon/huaji.png",
         "images/bigxians/show/huaji_3.png",
         "images/bigxians/show/huaji_1.png",
-        "images/bigxians/show/huaji_2.png"
+        "images/bigxians/show/huaji_2.png",
+        "images/bigxians/show/huaji_idle1.png",
+        "images/bigxians/show/huaji_idle3.png"
       ],
       "recipe": {
         "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
         "cost": [
           {
-            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "name": "木板[images/inventoryimages1/boards.png]",
             "count": 8
           }
         ]
@@ -130,15 +132,15 @@
         "images/bigxians/show/shaoyao.png"
       ],
       "recipe": {
-        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "station": "不需要",
         "cost": [
           {
             "name": "花瓣[images/inventoryimages2/petals.png]",
             "count": 5
           },
           {
-            "name": "石砖[images/inventoryimages1/cutstone.png]",
-            "count": 1
+            "name": "粘土砖",
+            "count": 3
           }
         ]
       }
@@ -150,7 +152,7 @@
         "建筑",
         "储物方案"
       ],
-      "detail": "1)20格子的箱子、不保鲜、可以堆叠、能放置任意物品\n2)配有专属ui\n3)超超超极大的展示柜子。能把你搜罗来的宝贝全部都展示出来！\n4)保留该物品原有的落地动画效果",
+      "detail": "1)20格子的箱子、不保鲜、可以堆叠、能放置任意物品\n2)配有专属ui\n3)超超超极大的展示柜子。能把你搜罗来的宝贝全部都展示出来！\n4)保留该物品原有的落地动画效果\n注：传家宝一/二为同一物品的两种外观（第二版可四向旋转），用轮播图展示",
       "images": [
         "images/bigxians/icon/chuanjiabao.png",
         "images/bigxians/show/chuanjiabao_1.png",
@@ -194,6 +196,489 @@
           {
             "name": "木板[images/inventoryimages1/boards.png]",
             "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "小木匠出师作",
+      "name": "小木匠出师作",
+      "category": [
+        "建筑",
+        "储物方案"
+      ],
+      "detail": "1)可升级的展示花架：1级4格 → 2级11格 → 3级18格\n2)手持木板右键升级，每级消耗5块木板，最高3级\n3)物品可堆叠、能放置任意物品，放入的物品会直接展示在花架上\n拾花两三阶，揽芳千百架，藏物一庭华。",
+      "images": [
+        "images/bigxians/icon/huuajia64x64.png",
+        "images/bigxians/show/huajia_idle2.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "木板[images/inventoryimages1/boards.png]",
+            "count": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "火师傅的贴身宝窑",
+      "name": "火师傅的贴身宝窑",
+      "category": [
+        "建筑",
+        "工具"
+      ],
+      "detail": "1)专属制作站，靠近即可解锁宝窑专属配方\n2)烧制粘土砖：5块土→2块砖；大炉：50块土→20块砖\n3)烧制一壶盛世间山海：2只/20只\n4)还能烧制荷花、梨花、素雪三才盏、白箬斗笠杯\n宫里的火师傅守了半辈子的窑炉，天天照看，窑火温顺好用，谁不眼红？\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "石砖[images/inventoryimages1/cutstone.png]",
+            "count": 3
+          },
+          {
+            "name": "木炭[images/inventoryimages1/charcoal.png]",
+            "count": 3
+          },
+          {
+            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "一壶盛世间山海",
+      "name": "一壶盛世间山海",
+      "category": [
+        "工具"
+      ],
+      "detail": "1)手持宝壶对场景中的建筑或物品使用「打包」，可将其收入壶中随身携带\n2)放置宝壶后可取出打包的物品，宝壶恢复为空壶\n3)壶身有随机配色\n4)也可在火师傅宝窑批量烧制（2只/20只）\n一器容四季兴衰，浮生尽在此中来。\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "木炭[images/inventoryimages1/charcoal.png]",
+            "count": 3
+          },
+          {
+            "name": "粘土砖",
+            "count": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "荷花",
+      "name": "荷花",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用荷花，可种植在地面，也能收起来随身携带\n2)只能在火师傅宝窑制作\n3)可以放进花几、花架等容器展示\n荷叶罗裙一色裁，芙蓉向脸两边开\n（图片暂缺，先用花瓣图标示意）",
+      "images": [
+        "images/inventoryimages2/petals.png"
+      ],
+      "recipe": {
+        "station": "火师傅宝窑",
+        "cost": [
+          {
+            "name": "花瓣[images/inventoryimages2/petals.png]",
+            "count": 5
+          },
+          {
+            "name": "粘土砖",
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "梨花",
+      "name": "梨花",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用梨花，可种植在地面，也能收起来随身携带\n2)只能在火师傅宝窑制作\n3)可以放进花几、花架等容器展示\n雪作肌肤玉作容，不将妖艳嫁东风\n（图片暂缺，先用花瓣图标示意）",
+      "images": [
+        "images/inventoryimages2/petals.png"
+      ],
+      "recipe": {
+        "station": "火师傅宝窑",
+        "cost": [
+          {
+            "name": "花瓣[images/inventoryimages2/petals.png]",
+            "count": 5
+          },
+          {
+            "name": "粘土砖",
+            "count": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "素雪三才盏",
+      "name": "素雪三才盏",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)拥有皮肤：朱红四棱盖碗、朱红敞口盏、天青引露公盂、冰菱青荷盏、翠荷承莲盖碗、碧荷单酌杯、银鳞望月盅、浅青圆腹盂\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "火师傅宝窑",
+        "cost": [
+          {
+            "name": "粘土砖",
+            "count": 1
+          },
+          {
+            "name": "木炭[images/inventoryimages1/charcoal.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "白箬斗笠杯",
+      "name": "白箬斗笠杯",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)与素雪三才盏共用8款茶具皮肤\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "火师傅宝窑",
+        "cost": [
+          {
+            "name": "粘土砖",
+            "count": 1
+          },
+          {
+            "name": "木炭[images/inventoryimages1/charcoal.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "一块有味道且很粘的土",
+      "name": "一块有味道且很粘的土",
+      "category": [
+        "材料"
+      ],
+      "detail": "1)粘土原料，可精炼为粘土砖\n2)在火师傅宝窑批量烧制更划算\n那很粘了！\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "鸟粪[images/inventoryimages2/guano.png]",
+            "count": 1
+          },
+          {
+            "name": "树枝[images/inventoryimages3/twigs.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "粘土砖",
+      "name": "粘土砖",
+      "category": [
+        "材料"
+      ],
+      "detail": "1)烧制后的粘土砖，是花、茶具、宝壶等物品的核心材料\n2)火师傅宝窑可批量烧制：5块土→2块砖，50块土→20块砖\n经过炮制味道似乎没那么大了。\n（图片暂缺）",
+      "images": [],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "粘土",
+            "count": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "树干1",
+      "name": "树干1",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages1/driftwood_log.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "树干2",
+      "name": "树干2",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages1/driftwood_log.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "树干3",
+      "name": "树干3",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages1/driftwood_log.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "树干4",
+      "name": "树干4",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages1/driftwood_log.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "树干5",
+      "name": "树干5",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages1/driftwood_log.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "石头堆1",
+      "name": "石头堆1",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/rocks.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "石头[images/inventoryimages3/rocks.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "石头堆2",
+      "name": "石头堆2",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/rocks.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "石头[images/inventoryimages3/rocks.png]",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "石头堆3",
+      "name": "石头堆3",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/rocks.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "石头[images/inventoryimages3/rocks.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "玻璃石头1",
+      "name": "玻璃石头1",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages2/moonglass.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "玻璃石头2",
+      "name": "玻璃石头2",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages2/moonglass.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "玻璃石头3",
+      "name": "玻璃石头3",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages2/moonglass.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "鱼骨头1",
+      "name": "鱼骨头1",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/spoiled_fish.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "鱼骨头2",
+      "name": "鱼骨头2",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/spoiled_fish.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "鱼骨头3",
+      "name": "鱼骨头3",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？\n（图片暂缺，先用材料图标示意）",
+      "images": [
+        "images/inventoryimages3/spoiled_fish.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
+            "count": 1
           }
         ]
       }
