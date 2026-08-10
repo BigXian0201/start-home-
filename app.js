@@ -156,14 +156,14 @@ function parseInlineImageToken(text) {
 
 function parseInlineImageTokens(text) {
   const s = String(text || "").trim();
-  const parts = s.split(/\s*\/\s*/).filter(Boolean);
   const tokens = [];
-  for (const part of parts) {
-    const m = part.match(/^(.*?)\[([^\]]+)\]$/);
-    if (!m) continue;
+  const re = /([^[\]]*)\[([^\]]+)\]/g;
+  let m;
+  while ((m = re.exec(s)) !== null) {
     const path = m[2].trim();
     if (!/\.(png|jpg|jpeg|webp|gif|svg)$/i.test(path)) continue;
-    tokens.push({ path, label: m[1].trim() });
+    const label = m[1].trim().replace(/^\/\s*/, "").trim();
+    tokens.push({ path, label });
   }
   return tokens;
 }
