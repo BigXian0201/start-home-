@@ -154,17 +154,34 @@ function parseInlineImageToken(text) {
   return { path, label };
 }
 
+function parseInlineImageTokens(text) {
+  const s = String(text || "").trim();
+  const parts = s.split(/\s*\/\s*/).filter(Boolean);
+  const tokens = [];
+  for (const part of parts) {
+    const m = part.match(/^(.*?)\[([^\]]+)\]$/);
+    if (!m) continue;
+    const path = m[2].trim();
+    if (!/\.(png|jpg|jpeg|webp|gif|svg)$/i.test(path)) continue;
+    tokens.push({ path, label: m[1].trim() });
+  }
+  return tokens;
+}
+
 
 function renderRecipeHtml(recipe, q) {
   if (!recipe) return "—";
 
 const station = recipe?.station ? String(recipe.station) : "";
-const stToken = parseInlineImageToken(station);
+const stTokens = parseInlineImageTokens(station);
 
 let stationHtml = `<div class="r-station r-muted">制作站：—</div>`;
 if (station) {
-  stationHtml = stToken
-    ? `<div class="r-station"><span class="r-label">制作站：</span><img class="r-img" src="${escapeHtml(stToken.path)}" alt="" loading="lazy" />${stToken.label ? `<span class="r-name">${highlight(stToken.label, q)}</span>` : ""}</div>`
+  stationHtml = stTokens.length
+    ? `<div class="r-station"><span class="r-label">制作站：</span>${stTokens.map(t =>
+        `<img class="r-img" src="${escapeHtml(t.path)}" alt="" loading="lazy" />` +
+        (t.label ? `<span class="r-name">${highlight(t.label, q)}</span>` : "")
+      ).join('<span class="r-muted"> / </span>')}</div>`
     : `<div class="r-station"><span class="r-label">制作站：</span><span class="r-name">${highlight(station, q)}</span></div>`;
 }
 

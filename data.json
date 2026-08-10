@@ -130,7 +130,7 @@
         "images/bigxians/show/shaoyao.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "花瓣[images/inventoryimages2/petals.png]",
@@ -185,7 +185,7 @@
         "images/bigxians/show/超大展示鱼缸.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "冰块[images/inventoryimages2/ice.png]",
@@ -213,7 +213,7 @@
         "images/bigxians/show/huajia_idle3.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "木板[images/inventoryimages1/boards.png]",
@@ -235,7 +235,7 @@
         "images/bigxians/show/yaolu.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "石砖[images/inventoryimages1/cutstone.png]",
@@ -264,7 +264,7 @@
         "images/bigxians/show/一壶.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png] / 火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
         "cost": [
           {
             "name": "木炭[images/inventoryimages1/charcoal.png]",
@@ -397,7 +397,7 @@
         "images/bigxians/show/bigxian_clay-0.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "鸟粪[images/inventoryimages2/guano.png]",
@@ -422,7 +422,7 @@
         "images/bigxians/show/bigxian_clay_brick-0.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "粘土[images/bigxians/icon/bigxian_clay.png]",
@@ -447,7 +447,7 @@
         "images/bigxians/show/wood5.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "浮木[images/inventoryimages1/driftwood_log.png]",
@@ -470,7 +470,7 @@
         "images/bigxians/show/rock3.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "石头[images/inventoryimages3/rocks.png]",
@@ -493,7 +493,7 @@
         "images/bigxians/show/moonglass_rock3.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
@@ -516,7 +516,7 @@
         "images/bigxians/show/fishbones3.png"
       ],
       "recipe": {
-        "station": "不需要",
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
           {
             "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
