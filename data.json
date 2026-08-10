@@ -261,12 +261,7 @@
       "detail": "1)手持宝壶对场景中的建筑或物品使用「打包」，可将其收入壶中随身携带\n2)放置宝壶后可取出打包的物品，宝壶恢复为空壶\n3)壶身有随机配色\n4)也可在火师傅宝窑批量烧制（2只/20只）\n一器容四季兴衰，浮生尽在此中来。",
       "images": [
         "images/bigxians/icon/chahu11.png",
-        "images/bigxians/show/一壶.png",
-        "images/bigxians/show/chahu1.png",
-        "images/bigxians/show/chahu3.png",
-        "images/bigxians/show/chahu5.png",
-        "images/bigxians/show/chahu7.png",
-        "images/bigxians/show/chahu9.png"
+        "images/bigxians/show/一壶.png"
       ],
       "recipe": {
         "station": "不需要",
@@ -338,12 +333,14 @@
       "category": [
         "装饰"
       ],
-      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)拥有皮肤：朱红四棱盖碗、朱红敞口盏、天青引露公盂、冰菱青荷盏、翠荷承莲盖碗、碧荷单酌杯、银鳞望月盅、浅青圆腹盂",
+      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)拥有皮肤：朱红四棱盖碗、天青引露公盂、翠荷承莲盖碗、银鳞望月盅",
       "images": [
-        "images/bigxians/show/chahu2.png",
-        "images/bigxians/show/chahu4.png",
-        "images/bigxians/show/chahu6.png",
-        "images/bigxians/show/chahu8.png"
+        "images/bigxians/icon/chahu9.png",
+        "images/bigxians/show/chahu9.png",
+        "images/bigxians/show/chahu1.png",
+        "images/bigxians/show/chahu3.png",
+        "images/bigxians/show/chahu5.png",
+        "images/bigxians/show/chahu7.png"
       ],
       "recipe": {
         "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
@@ -365,9 +362,14 @@
       "category": [
         "装饰"
       ],
-      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)与素雪三才盏共用8款茶具皮肤",
+      "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)拥有皮肤：朱红敞口盏、冰菱青荷盏、碧荷单酌杯、浅青圆腹盂",
       "images": [
-        "images/bigxians/show/chahu10.png"
+        "images/bigxians/icon/chahu10.png",
+        "images/bigxians/show/chahu10.png",
+        "images/bigxians/show/chahu2.png",
+        "images/bigxians/show/chahu4.png",
+        "images/bigxians/show/chahu6.png",
+        "images/bigxians/show/chahu8.png"
       ],
       "recipe": {
         "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
