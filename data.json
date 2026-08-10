@@ -459,12 +459,32 @@
       "category": [
         "装饰"
       ],
-      "detail": "1)装饰用石头堆与玻璃石头，共6种造型\n2)可以放进雪人、鱼缸等装饰位\n石头堆：几个零散的石头；玻璃石头：亮晶晶的",
+      "detail": "1)装饰用石头堆，共3种造型\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头",
       "images": [
         "images/bigxians/icon/bigxian_rock1.png",
         "images/bigxians/show/rock1.png",
         "images/bigxians/show/rock2.png",
-        "images/bigxians/show/rock3.png",
+        "images/bigxians/show/rock3.png"
+      ],
+      "recipe": {
+        "station": "不需要",
+        "cost": [
+          {
+            "name": "石头[images/inventoryimages3/rocks.png]",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "玻璃石头",
+      "name": "玻璃石头",
+      "category": [
+        "装饰"
+      ],
+      "detail": "1)装饰用玻璃石头，共3种造型\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的",
+      "images": [
+        "images/bigxians/icon/bigxian_moonglass_rock1.png",
         "images/bigxians/show/moonglass_rock.png",
         "images/bigxians/show/moonglass_rock2.png",
         "images/bigxians/show/moonglass_rock3.png"
@@ -473,7 +493,7 @@
         "station": "不需要",
         "cost": [
           {
-            "name": "石头[images/inventoryimages3/rocks.png]",
+            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
             "count": 1
           }
         ]
