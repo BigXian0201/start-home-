@@ -369,6 +369,53 @@
       }
     },
     {
+      "id": "王母娘娘的照容仙镜",
+      "name": "王母娘娘的照容仙镜",
+      "desc": "常设瑶池妆台梳鬓，亦可持镜照破世间虚妄。",
+      "category": [
+        "工具",
+        "魔法"
+      ],
+      "detail": "1)右键激活仙镜，可照出范围内的物件\n2)选中目标即可生成「镜中幻形」，能随身携带或摆放展示\n3)镜中幻形只有形影、没有功能，可调整大小、高度、朝向、旋转与动画速度\n4)也能照出人物与生物的外形\n常设瑶池妆台梳鬓，亦可持镜照破世间虚妄。",
+      "images": [],
+      "recipe": {
+        "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
+        "cost": [
+          {
+            "name": "月亮石碎块[images/inventoryimages2/moonrocknugget.png]",
+            "count": 5
+          },
+          {
+            "name": "紫宝石[images/inventoryimages2/purplegem.png]",
+            "count": 5
+          },
+          {
+            "name": "金块[images/inventoryimages2/goldnugget.png]",
+            "count": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "红墙",
+      "name": "红墙",
+      "desc": "坚固的红色石墙。",
+      "category": [
+        "建筑"
+      ],
+      "detail": "1)坚固的红色石墙，可以阻挡通行\n2)和原版石墙一样，会随耐久降低出现破损动画\n3)石砖×2 可做成 6 个墙（科学二本）\n一堵红色的石墙。",
+      "images": [],
+      "recipe": {
+        "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
+        "cost": [
+          {
+            "name": "石砖[images/inventoryimages1/cutstone.png]",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
       "id": "芍药",
       "name": "芍药",
       "desc": "把鲜切芍药放进花瓶",
