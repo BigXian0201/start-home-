@@ -31,6 +31,7 @@ function itemSearchText(item) {
   const parts = [
     item.id,
     item.name,
+    item.desc,
     item.category,
     item.detail,
     JSON.stringify(item.recipe || {}),
@@ -318,27 +319,29 @@ else {
     const recipeHtml = renderRecipeHtml(item.recipe || null, q);
 
 
+      const descText = (item.desc || "").trim();
       const detailText = item.detail || item.notes || "";
       const detailLines = detailText.split("\n").map(s => s.trim()).filter(Boolean);
       const featureLines = [];
-      const descLines = [];
+      const extraLines = [];
       for (const line of detailLines) {
         if (/^\d+\)/.test(line)) {
           featureLines.push(line.replace(/^(\d+)\)/, "$1、"));
-        } else {
-          descLines.push(line);
+        } else if (line !== descText) {
+          extraLines.push(line);
         }
       }
-      const descHtml = descLines.length ? `
+      const descHtml = descText ? `
         <div class="detail">
           <div class="k">物品描述</div>
-          <div class="v">${highlight(descLines.join("\n"), q)}</div>
+          <div class="v">${highlight(descText, q)}</div>
         </div>
       ` : "";
-      const detailHtml = featureLines.length ? `
+      const introLines = [...featureLines, ...extraLines];
+      const detailHtml = introLines.length ? `
         <div class="detail">
           <div class="k">详细介绍</div>
-          <div class="v">${highlight(featureLines.join("\n"), q)}</div>
+          <div class="v">${highlight(introLines.join("\n"), q)}</div>
         </div>
       ` : "";
 
