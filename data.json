@@ -139,7 +139,7 @@
             "count": 5
           },
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 3
           }
         ]
@@ -261,7 +261,13 @@
       ],
       "detail": "1)手持宝壶对场景中的建筑或物品使用「打包」，可将其收入壶中随身携带\n2)放置宝壶后可取出打包的物品，宝壶恢复为空壶\n3)壶身有随机配色\n4)也可在火师傅宝窑批量烧制（2只/20只）\n一器容四季兴衰，浮生尽在此中来。",
       "images": [
-        "images/bigxians/icon/bigxian_da_bao.png"
+        "images/bigxians/icon/chahu11.png",
+        "images/bigxians/show/一壶.png",
+        "images/bigxians/show/chahu1.png",
+        "images/bigxians/show/chahu3.png",
+        "images/bigxians/show/chahu5.png",
+        "images/bigxians/show/chahu7.png",
+        "images/bigxians/show/chahu9.png"
       ],
       "recipe": {
         "station": "不需要",
@@ -271,7 +277,7 @@
             "count": 3
           },
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 5
           }
         ]
@@ -289,14 +295,14 @@
         "images/bigxians/show/idel-hehua.png"
       ],
       "recipe": {
-        "station": "火师傅宝窑",
+        "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
         "cost": [
           {
             "name": "花瓣[images/inventoryimages2/petals.png]",
             "count": 5
           },
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 3
           }
         ]
@@ -314,14 +320,14 @@
         "images/bigxians/show/idel-lihua.png"
       ],
       "recipe": {
-        "station": "火师傅宝窑",
+        "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
         "cost": [
           {
             "name": "花瓣[images/inventoryimages2/petals.png]",
             "count": 5
           },
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 3
           }
         ]
@@ -335,14 +341,16 @@
       ],
       "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)拥有皮肤：朱红四棱盖碗、朱红敞口盏、天青引露公盂、冰菱青荷盏、翠荷承莲盖碗、碧荷单酌杯、银鳞望月盅、浅青圆腹盂",
       "images": [
-        "images/bigxians/icon/chahu9.png",
-        "images/bigxians/show/chahu9.png"
+        "images/bigxians/show/chahu2.png",
+        "images/bigxians/show/chahu4.png",
+        "images/bigxians/show/chahu6.png",
+        "images/bigxians/show/chahu8.png"
       ],
       "recipe": {
-        "station": "火师傅宝窑",
+        "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
         "cost": [
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 1
           },
           {
@@ -360,14 +368,13 @@
       ],
       "detail": "1)茶具，可收藏或放进展示容器\n2)只能在火师傅宝窑制作\n3)与素雪三才盏共用8款茶具皮肤",
       "images": [
-        "images/bigxians/icon/chahu10.png",
         "images/bigxians/show/chahu10.png"
       ],
       "recipe": {
-        "station": "火师傅宝窑",
+        "station": "火师傅宝窑[images/bigxians/icon/bigxian_yaolu.png]",
         "cost": [
           {
-            "name": "粘土砖",
+            "name": "粘土砖[images/bigxians/icon/bigxian_clay_brick.png]",
             "count": 1
           },
           {
@@ -417,105 +424,25 @@
         "station": "不需要",
         "cost": [
           {
-            "name": "粘土",
+            "name": "粘土[images/bigxians/icon/bigxian_clay.png]",
             "count": 5
           }
         ]
       }
     },
     {
-      "id": "树干1",
-      "name": "树干1",
+      "id": "树干",
+      "name": "树干",
       "category": [
         "装饰"
       ],
-      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
+      "detail": "1)装饰用浮木树干，共5种造型\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
       "images": [
         "images/bigxians/icon/bigxian_wood1.png",
-        "images/bigxians/show/wood1.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "树干2",
-      "name": "树干2",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
-      "images": [
-        "images/bigxians/icon/bigxian_wood2.png",
-        "images/bigxians/show/wood2.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "树干3",
-      "name": "树干3",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
-      "images": [
-        "images/bigxians/icon/bigxian_wood3.png",
-        "images/bigxians/show/wood3.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "树干4",
-      "name": "树干4",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
-      "images": [
-        "images/bigxians/icon/bigxian_wood4.png",
-        "images/bigxians/show/wood4.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "浮木[images/inventoryimages1/driftwood_log.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "树干5",
-      "name": "树干5",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用树干\n2)可以放进雪人、鱼缸等装饰位\n浮木？沉木！",
-      "images": [
-        "images/bigxians/icon/bigxian_wood5.png",
+        "images/bigxians/show/wood1.png",
+        "images/bigxians/show/wood2.png",
+        "images/bigxians/show/wood3.png",
+        "images/bigxians/show/wood4.png",
         "images/bigxians/show/wood5.png"
       ],
       "recipe": {
@@ -529,182 +456,42 @@
       }
     },
     {
-      "id": "石头堆1",
-      "name": "石头堆1",
+      "id": "石头堆",
+      "name": "石头堆",
       "category": [
         "装饰"
       ],
-      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头",
+      "detail": "1)装饰用石头堆与玻璃石头，共6种造型\n2)可以放进雪人、鱼缸等装饰位\n石头堆：几个零散的石头；玻璃石头：亮晶晶的",
       "images": [
         "images/bigxians/icon/bigxian_rock1.png",
-        "images/bigxians/show/rock1.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "石头[images/inventoryimages3/rocks.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "石头堆2",
-      "name": "石头堆2",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头",
-      "images": [
-        "images/bigxians/icon/bigxian_rock2.png",
-        "images/bigxians/show/rock2.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "石头[images/inventoryimages3/rocks.png]",
-            "count": 2
-          }
-        ]
-      }
-    },
-    {
-      "id": "石头堆3",
-      "name": "石头堆3",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用石头堆\n2)可以放进雪人、鱼缸等装饰位\n几个零散的石头",
-      "images": [
-        "images/bigxians/icon/bigxian_rock3.png",
-        "images/bigxians/show/rock3.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "石头[images/inventoryimages3/rocks.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "玻璃石头1",
-      "name": "玻璃石头1",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的",
-      "images": [
-        "images/bigxians/icon/bigxian_moonglass_rock1.png",
-        "images/bigxians/show/moonglass_rock.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "玻璃石头2",
-      "name": "玻璃石头2",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的",
-      "images": [
-        "images/bigxians/icon/bigxian_moonglass_rock2.png",
-        "images/bigxians/show/moonglass_rock2.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "玻璃石头3",
-      "name": "玻璃石头3",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用玻璃石头\n2)可以放进雪人、鱼缸等装饰位\n亮晶晶的",
-      "images": [
-        "images/bigxians/icon/bigxian_moonglass_rock3.png",
+        "images/bigxians/show/rock1.png",
+        "images/bigxians/show/rock2.png",
+        "images/bigxians/show/rock3.png",
+        "images/bigxians/show/moonglass_rock.png",
+        "images/bigxians/show/moonglass_rock2.png",
         "images/bigxians/show/moonglass_rock3.png"
       ],
       "recipe": {
         "station": "不需要",
         "cost": [
           {
-            "name": "玻璃碎片[images/inventoryimages2/moonglass.png]",
+            "name": "石头[images/inventoryimages3/rocks.png]",
             "count": 1
           }
         ]
       }
     },
     {
-      "id": "鱼骨头1",
-      "name": "鱼骨头1",
+      "id": "鱼骨头",
+      "name": "鱼骨头",
       "category": [
         "装饰"
       ],
-      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？",
+      "detail": "1)装饰用鱼骨头，共3种造型\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？",
       "images": [
         "images/bigxians/icon/bigxian_fishbones1.png",
-        "images/bigxians/show/fishbones1.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "鱼骨头2",
-      "name": "鱼骨头2",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？",
-      "images": [
-        "images/bigxians/icon/bigxian_fishbones2.png",
-        "images/bigxians/show/fishbones2.png"
-      ],
-      "recipe": {
-        "station": "不需要",
-        "cost": [
-          {
-            "name": "烂鱼[images/inventoryimages3/spoiled_fish.png]",
-            "count": 1
-          }
-        ]
-      }
-    },
-    {
-      "id": "鱼骨头3",
-      "name": "鱼骨头3",
-      "category": [
-        "装饰"
-      ],
-      "detail": "1)装饰用鱼骨头\n2)可以放进雪人、鱼缸等装饰位\n鱼的骨架吗？",
-      "images": [
-        "images/bigxians/icon/bigxian_fishbones3.png",
+        "images/bigxians/show/fishbones1.png",
+        "images/bigxians/show/fishbones2.png",
         "images/bigxians/show/fishbones3.png"
       ],
       "recipe": {
