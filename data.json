@@ -207,7 +207,7 @@
       ],
       "detail": "1)可升级的展示花架：1级4格 → 2级11格 → 3级18格\n2)手持木板右键升级，每级消耗5块木板，最高3级\n3)物品可堆叠、能放置任意物品，放入的物品会直接展示在花架上\n拾花两三阶，揽芳千百架，藏物一庭华。",
       "images": [
-        "images/bigxians/show/huaji_idle1.png",
+        "images/bigxians/show/huajia_idle1.png",
         "images/bigxians/show/huajia_idle2.png",
         "images/bigxians/show/huajia_idle3.png"
       ],
