@@ -319,10 +319,26 @@ else {
 
 
       const detailText = item.detail || item.notes || "";
-      const detailHtml = detailText ? `
+      const detailLines = detailText.split("\n").map(s => s.trim()).filter(Boolean);
+      const featureLines = [];
+      const descLines = [];
+      for (const line of detailLines) {
+        if (/^\d+\)/.test(line)) {
+          featureLines.push(line.replace(/^(\d+)\)/, "$1、"));
+        } else {
+          descLines.push(line);
+        }
+      }
+      const descHtml = descLines.length ? `
+        <div class="detail">
+          <div class="k">物品描述</div>
+          <div class="v">${highlight(descLines.join("\n"), q)}</div>
+        </div>
+      ` : "";
+      const detailHtml = featureLines.length ? `
         <div class="detail">
           <div class="k">详细介绍</div>
-          <div class="v">${highlight(detailText, q)}</div>
+          <div class="v">${highlight(featureLines.join("\n"), q)}</div>
         </div>
       ` : "";
 
@@ -345,6 +361,7 @@ else {
             </div>
           </div>
 
+          ${descHtml}
           ${detailHtml}
         </article>
       `;
