@@ -272,15 +272,15 @@
 
 
     .list{
-      display:flex;
-      flex-direction:column;
-      gap: var(--gap);
-      align-items:center;
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap:16px;
+      align-items:start;
+      justify-items:stretch;
     }
 
 
     .card{
-      width: min(var(--max), 100%);
       background:
         radial-gradient(900px 220px at 18% 0%, rgba(184,157,68,.10), transparent 60%),
         linear-gradient(180deg, var(--card2), var(--card));
@@ -454,8 +454,7 @@
       width:100%;
       height:auto;
       display:block;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
+      max-width:100%;
       background: transparent;
     }
 
@@ -551,6 +550,132 @@
       line-height:1.75;
     }
     .u-changes li::marker{color: rgba(184,157,68,.9);}
+
+    [hidden]{display:none !important}
+
+    /* 首页落地视图 */
+    .home{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+    }
+    .homeIntro{
+      width:min(780px,100%);
+      text-align:center;
+      padding:26px 28px;
+    }
+    .homeTitle{
+      margin:0 0 14px;
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:2px;
+      color: rgb(105,65,37);
+    }
+    .homeBody{
+      font-size:14px;
+      line-height:2;
+      color: var(--ink);
+      white-space:pre-wrap;
+    }
+    .homeCredits{
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid rgba(42,26,16,.10);
+      font-size:12px;
+      color: var(--muted);
+      line-height:1.8;
+      white-space:pre-wrap;
+    }
+    .homeCats{
+      width:100%;
+      max-width:1080px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .homeCat{
+      cursor:pointer;
+      padding:20px 18px;
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .homeCat:hover{
+      transform: translateY(-3px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(184,157,68,.45);
+    }
+    .homeCat h3{
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:900;
+      color: rgb(105,65,37);
+    }
+    .homeCat .tagline{
+      margin-bottom:10px;
+      font-size:13px;
+      font-weight:700;
+      color: rgb(150,90,20);
+      background: rgba(184,157,68,.14);
+      border-radius:999px;
+      padding:4px 10px;
+      display:inline-block;
+    }
+    .homeCat .desc{
+      font-size:12px;
+      line-height:1.7;
+      color: var(--muted);
+      opacity:.95;
+    }
+    .homeAllBtn{
+      margin-top:6px;
+      padding:12px 34px;
+      border:0;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:2px;
+      cursor:pointer;
+      color: rgb(47,23,10);
+      background:
+        radial-gradient(18px 18px at 28% 28%, rgba(255,255,255,.35), transparent 60%),
+        linear-gradient(180deg, rgba(230,205,120,1), rgba(184,157,68,1));
+      border:1px solid rgba(0,0,0,.22);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 8px 20px rgba(0,0,0,.18);
+      transition:.15s ease;
+    }
+    .homeAllBtn:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    @media (max-width: 900px){
+      .homeCats{ grid-template-columns:1fr; }
+      .homeTitle{ font-size:20px; }
+    }
+
+    /* 三大主线筛选栏 */
+    .mainlineRow{
+      max-width:1200px;
+      margin:0 auto;
+      padding:10px 16px 0;
+    }
+    .mainlines{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
+    .chip-main{
+      font-size:14px;
+      padding:9px 16px;
+    }
+
+    @media (max-width: 720px){
+      .list{ grid-template-columns:1fr; }
+    }
 
     /* 深色主题 */
     html[data-theme="dark"]{
@@ -706,18 +831,23 @@ header, .wrap{
     </div>
   </div>
 
-  <div class="catRow">
+  <div class="catRow" id="catRow">
     <nav class="cats" id="catBar" aria-label="分类栏"></nav>
+  </div>
+
+  <div class="mainlineRow" id="mainlineRow">
+    <div class="mainlines" id="mainlineBar"></div>
   </div>
 
   <div class="toolRow">
     <div class="tools">
-        <div class="search" title="全局搜索（名称/配方/详细介绍等）">
+        <div class="search" id="searchBox" title="全局搜索（名称/配方/详细介绍等）">
           <img class="searchIcon" src="images/inventoryimages1/compass.png" alt="" />
           <input id="searchInput" placeholder="搜索：物品名 / 配方 / 关键词…" autocomplete="off" />
         </div>
       <button class="btn" id="clearBtn">清空</button>
       <button class="btn" id="resetBtn">重置分类</button>
+      <button class="btn" id="homeBtn" title="返回首页" hidden>返回首页</button>
       <button class="btn" id="themeBtn" title="切换深色/浅色主题">🌙</button>
       <button class="btn" id="langBtn" title="中英文切换 / Switch language">EN</button>
     </div>
@@ -725,16 +855,17 @@ header, .wrap{
 </header>
 
 <main class="wrap">
-  <div class="bar">
+  <div class="bar" id="barRow">
     <div class="hint" id="resultHint">—</div>
     <div class="pill" id="activeState">分类：全部｜搜索：无</div>
   </div>
 
+  <section class="home" id="home"></section>
   <section class="list" id="list"></section>
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-3"></script>
+<script src="./app.js?v=20260828-4"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

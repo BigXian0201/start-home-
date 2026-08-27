@@ -2,6 +2,8 @@ const $ = (sel) => document.querySelector(sel);
 
 const state = {
   data: null,
+  view: "home",
+  mainline: "",
   activeCats: [],
   query: "",
   lang: "zh",
@@ -18,6 +20,8 @@ const UI_TEXT = {
     langBtn: "EN",
     langTitle: "切换到英文 / Switch to English",
     themeBtn: "切换深色/浅色主题",
+    viewAll: "查看全部物件",
+    backHome: "返回首页",
     catAria: "分类栏",
     noImage: "未配置图片：在 data.json 的 images 数组里填入 images/xxx.png",
     recipe: "配方",
@@ -44,6 +48,8 @@ const UI_TEXT = {
     langBtn: "中文",
     langTitle: "切换到中文 / Switch to Chinese",
     themeBtn: "Toggle dark/light theme",
+    viewAll: "View All Items",
+    backHome: "Back to Home",
     catAria: "Category bar",
     noImage: "No image: add images/xxx.png to the images array in data.json",
     recipe: "Recipe",
@@ -72,6 +78,29 @@ const EN_CATS = {
   "装饰": "Decoration",
   "储物方案": "Storage",
   "更新日记": "Update Diary"
+};
+
+const EN_MAINLINES = {
+  "市井天工": {
+    name: "Worldly Crafts",
+    tagline: "Divine craftsmanship within mortal life",
+    desc: "Everyday oriental furniture and wares: display cabinets, plant stands, tea ware, flowers, and storage tables. Build a kiln to fire clay bricks and decorations in batches."
+  },
+  "仙尘旧物": {
+    name: "Fairy Relics",
+    tagline: "Dust and old relics shaken from an immortal's sleeve",
+    desc: "Myth-themed utilities: the Kunlun Jade Hairpin, the World-Vessel Pot, and the Celestial Mirror. Reshape land and ocean, pack buildings to carry them along, and reflect ten thousand forms."
+  },
+  "浮世偶遇": {
+    name: "Miscellaneous",
+    tagline: "Wandering curiosities met by chance in the mortal world",
+    desc: "Scattered trinkets: driftwood, rock piles, moonglass shards, and fish bones. Place them in aquariums or snowman decoration slots to dress up your scenes."
+  }
+};
+
+const EN_HOME = {
+  body: "Let's start building a home!\nAfter cooking so many dishes, they deserve a proper display!\nAll those beautiful collectibles should be shown off too!\n\nMore decorative furniture will continue to be added. We hope it brightens your Don't Starve world!",
+  credits: "Art: BigXian\nCode: San, mooncake\nSpecial thanks: San, Xiaohuahua (aquarium logic)\nFeedback QQ group: 199540863"
 };
 
 const EN_STATIONS = {
@@ -382,6 +411,8 @@ function enStation(label) { return isEn() && EN_STATIONS[label] ? EN_STATIONS[la
 function enMat(label) { return isEn() && EN_MATS[label] ? EN_MATS[label] : label; }
 function enItem(item) { return isEn() && EN_ITEMS[item.id] ? EN_ITEMS[item.id] : null; }
 function enUpdate(u) { return isEn() && EN_UPDATES[u.id] ? EN_UPDATES[u.id] : null; }
+function enMainline(name) { return isEn() && EN_MAINLINES[name] ? EN_MAINLINES[name].name : name; }
+function enMainlineObj(m) { return isEn() && EN_MAINLINES[m.name] ? EN_MAINLINES[m.name] : null; }
 
 const carouselState = new Map();
 function getCats(item) {
@@ -469,6 +500,8 @@ function autoBold(text) {
 
 function setHashFromState() {
   const params = new URLSearchParams();
+  if (state.view === "list") params.set("view", "list");
+  if (state.mainline) params.set("main", state.mainline);
   if (state.activeCats.length) params.set("cat", state.activeCats.join(","));
   if (state.query) params.set("q", state.query);
   const hash = params.toString();
@@ -478,6 +511,8 @@ function setHashFromState() {
 function loadStateFromHash() {
   const hash = (location.hash || "").replace(/^#/, "");
   const params = new URLSearchParams(hash);
+  state.view = params.get("view") === "list" ? "list" : "home";
+  state.mainline = params.get("main") || "";
   state.activeCats = (params.get("cat") || "").split(",").filter(Boolean);
   state.query = params.get("q") || "";
 }
@@ -526,6 +561,83 @@ function renderHeader() {
     ${mod.desc ? `<div style="margin-top:10px">${escapeHtml(mod.desc)}</div>` : ""}
     ${mod.note ? `<div style="opacity:.85;font-size:12px;">${escapeHtml(mod.note)}</div>` : ""}
   `;
+}
+
+function renderHome() {
+  const home = $("#home");
+  if (!home) return;
+  const intro = state.data.intro || {};
+  const mains = state.data.mainlines || [];
+  const enHome = isEn() ? EN_HOME : null;
+  home.innerHTML = `
+    <article class="homeIntro card">
+      <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
+      <div class="homeBody">${escapeHtml((enHome && enHome.body) || intro.body || "")}</div>
+      ${intro.credits ? `<div class="homeCredits">${escapeHtml((enHome && enHome.credits) || intro.credits)}</div>` : ""}
+    </article>
+    <div class="homeCats">
+      ${mains.map(m => {
+        const en = enMainlineObj(m);
+        return `
+          <div class="homeCat card" data-main="${escapeHtml(m.name)}">
+            <h3>${escapeHtml(enMainline(m.name))}</h3>
+            <div class="tagline">${escapeHtml((en && en.tagline) || m.tagline || "")}</div>
+            <div class="desc">${escapeHtml((en && en.desc) || m.desc || "")}</div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+    <button class="homeAllBtn" id="homeAllBtn">${escapeHtml(uiText("viewAll"))}</button>
+  `;
+}
+
+function enterList(main) {
+  state.view = "list";
+  state.mainline = main || "";
+  setHashFromState();
+  render();
+}
+
+function renderMainlines() {
+  const bar = $("#mainlineBar");
+  if (!bar) return;
+  const mains = state.data.mainlines || [];
+  bar.innerHTML = "";
+
+  const all = document.createElement("div");
+  all.className = "chip chip-main" + (state.mainline ? "" : " active");
+  all.textContent = enCat("全部");
+  all.addEventListener("click", () => {
+    state.mainline = "";
+    setHashFromState();
+    render();
+  });
+  bar.appendChild(all);
+
+  mains.forEach(m => {
+    const el = document.createElement("div");
+    el.className = "chip chip-main" + (state.mainline === m.name ? " active" : "");
+    el.textContent = enMainline(m.name);
+    el.addEventListener("click", () => {
+      state.mainline = m.name;
+      setHashFromState();
+      render();
+    });
+    bar.appendChild(el);
+  });
+}
+
+function setViewUI() {
+  const home = state.view === "home";
+  $("#home").hidden = !home;
+  $("#list").hidden = home;
+  $("#searchBox").hidden = home;
+  $("#catRow").hidden = home;
+  $("#mainlineRow").hidden = home;
+  $("#barRow").hidden = home;
+  $("#clearBtn").hidden = home;
+  $("#resetBtn").hidden = home;
+  $("#homeBtn").hidden = home;
 }
 
 function renderCats() {
@@ -598,6 +710,12 @@ function applyLang() {
 
   const themeBtn = $("#themeBtn");
   if (themeBtn) themeBtn.title = uiText("themeBtn");
+
+  const homeBtn = $("#homeBtn");
+  if (homeBtn) {
+    homeBtn.textContent = uiText("backHome");
+    homeBtn.title = uiText("backHome");
+  }
 
   const catBar = $("#catBar");
   if (catBar) catBar.setAttribute("aria-label", uiText("catAria"));
@@ -691,6 +809,7 @@ if (station) {
 
 
 function matchItem(item) {
+  if (state.mainline && item.mainline !== state.mainline) return false;
   const cs = getCats(item);
   const catOk = state.activeCats.length === 0 || cs.some(c => state.activeCats.includes(c));
   if (!catOk) return false;
@@ -914,8 +1033,11 @@ else {
 
 
 function render() {
+  renderHome();
+  renderMainlines();
   renderCats();
   renderList();
+  setViewUI();
 }
 
 async function init() {
@@ -941,6 +1063,23 @@ async function init() {
   applyTheme();
   renderHeader();
   render();
+
+  $("#home")?.addEventListener("click", (e) => {
+    const allBtn = e.target.closest("#homeAllBtn");
+    if (allBtn) {
+      enterList("");
+      return;
+    }
+    const catEl = e.target.closest(".homeCat");
+    if (catEl && catEl.dataset.main) enterList(catEl.dataset.main);
+  });
+
+  $("#homeBtn")?.addEventListener("click", () => {
+    state.view = "home";
+    state.mainline = "";
+    setHashFromState();
+    render();
+  });
 
 
     $("#list")?.addEventListener("click", (e) => {
@@ -1012,10 +1151,10 @@ async function init() {
   });
 
   window.addEventListener("hashchange", () => {
-    const beforeCats = state.activeCats.join(",");
-    const beforeQ = state.query;
+    const before = [state.view, state.mainline, state.activeCats.join(","), state.query].join("|");
     loadStateFromHash();
-    if (beforeCats !== state.activeCats.join(",") || beforeQ !== state.query) render();
+    const after = [state.view, state.mainline, state.activeCats.join(","), state.query].join("|");
+    if (before !== after) render();
   });
 }
 
