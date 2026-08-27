@@ -100,107 +100,107 @@ const EN_ITEMS = {
   "实木长条桌": {
     name: "Solid Wood Banquet Table",
     desc: "Now that is a large table!",
-    detail: "1. A 9-slot container.\n2. Food inside never spoils.\n3. Items can stack, and any item can be placed inside.\n4. Has a dedicated UI."
+    detail: "1. A <b>9-slot</b> container.\n2. Food inside <b>never spoils</b>.\n3. Items can stack, and any item can be placed inside.\n4. Has a dedicated UI."
   },
   "花几": {
     name: "Flower Display Table",
     desc: "A place for your favorite decorations.",
-    detail: "1. A single-slot container.\n2. Food inside never spoils.\n3. Items can stack, and any item can be placed inside.\n4. Has skins: Ironwork and Country."
+    detail: "1. A <b>single-slot</b> container.\n2. Food inside <b>never spoils</b>.\n3. Items can stack, and any item can be placed inside.\n4. Has skins: <b>Ironwork and Country</b>."
   },
   "老木匠的传家宝": {
     name: "Old Carpenter's Heirloom",
     desc: "Build a cabinet frame, then fit the shelves and drawers.",
-    detail: "1. A 20-slot container. Food does not stay fresh; items can stack and any item can be placed inside.\n2. Has a dedicated UI.\n3. An enormous display cabinet — show off every treasure you have gathered!\n4. Keeps the item's original drop animation.\nNote: In-game these are two separate recipes — Old Carpenter's Heirloom and Old Carpenter's Second Heirloom. Both work the same and look different; each can rotate in four directions."
+    detail: "1. A <b>20-slot</b> container. Food does not stay fresh; items can stack and any item can be placed inside.\n2. Has a dedicated UI.\n3. An <b>enormous display cabinet</b> — show off every treasure you have gathered!\n4. Keeps the item's original drop animation.\nNote: In-game these are two separate recipes — Old Carpenter's Heirloom and Old Carpenter's Second Heirloom. Both work the same and look different; each can rotate in four directions."
   },
   "老渔翁的家藏珍": {
     name: "Old Fisherman's Treasured Aquarium",
     desc: "Chinese patterns and glass make a fine home for beautiful fish.",
-    detail: "1. An aquarium with unlimited slots that keeps food fresh.\n2. Can be decorated; its decoration slots are shared with the snowman.\n3. No more excuses for coming back empty-handed!\n4. Hit it with a hammer to pick it up."
+    detail: "1. An <b>aquarium with unlimited slots</b> that keeps food fresh.\n2. Can be decorated; its decoration slots are <b>shared with the snowman</b>.\n3. No more excuses for coming back empty-handed!\n4. Hit it with a hammer to pick it up."
   },
   "王母娘娘的昆仑玉簪": {
     name: "Queen Mother's Kunlun Jade Hairpin",
     desc: "It is said the Queen Mother once used it to divide the Heavenly River...",
-    detail: "1. Right-click to toggle conversion between land and ocean.\n2. Has an unlimited turf container; turfs are used automatically when converting ocean back to land.\n3. Insert gems of different colors to unlock different-colored lights; the radius grows with more gems.\n4. +25% movement speed.\n5. Server admins can set crafting permission: All Players (default) or Admins Only."
+    detail: "1. Right-click to toggle <b>land and ocean conversion</b>.\n2. Has an <b>unlimited turf container</b>; turfs are used automatically when converting ocean back to land.\n3. Insert gems of different colors to unlock <b>different-colored lights</b>; the radius grows with more gems.\n4. <b>+25% movement speed</b>.\n5. Server admins can set <b>crafting permission</b>: All Players (default) or Admins Only."
   },
   "小木匠出师作": {
     name: "Young Carpenter's Masterpiece",
     desc: "Master, look! I finally made something all by myself!",
-    detail: "1. An upgradeable display flower rack: Level 1 has 4 slots, Level 2 has 11, Level 3 has 18.\n2. Right-click with boards to upgrade; each level costs 5 boards, up to Level 3.\n3. Items can stack and any item can be placed; placed items are shown directly on the rack.\nA few steps gather blossoms; a whole rack holds a garden."
+    detail: "1. An upgradeable display flower rack: <b>Level 1: 4 slots → Level 2: 11 slots → Level 3: 18 slots</b>.\n2. Right-click with boards to upgrade; <b>each level costs 5 boards</b>, up to Level 3.\n3. Items can stack and any item can be placed; placed items are <b>shown directly on the rack</b>.\nA few steps gather blossoms; a whole rack holds a garden."
   },
   "一块有味道且很粘的土": {
     name: "A Smelly Lump of Sticky Clay",
     desc: "That is certainly sticky!",
-    detail: "1. Clay material; can be refined into Clay Bricks.\n2. Firing in batches at Master Huo's Kiln is more efficient.\nThat is certainly sticky!"
+    detail: "1. <b>Clay material</b>; can be refined into Clay Bricks.\n2. Firing in batches at Master Huo's Kiln is <b>more efficient</b>.\nThat is certainly sticky!"
   },
   "火师傅的贴身宝窑": {
     name: "Master Huo's Cherished Kiln",
     desc: "Master Huo tended this gentle palace kiln for half his life. Who would not envy it?",
-    detail: "1. A dedicated crafting station; approach it to unlock kiln-only recipes.\n2. Fire Clay Bricks: 5 clay → 2 bricks; large firing: 50 clay → 20 bricks.\n3. Fire A Pot of Mountains and Seas: 2 or 20 pots per firing.\n4. Also fires Lotus, Pear Blossom, Snow-White Three-Piece Gaiwan, and White Rush Conical Cup.\n5. Batch firing saves materials and time.\nMaster Huo tended this gentle palace kiln for half his life. Who would not envy it?"
+    detail: "1. A <b>dedicated crafting station</b>; approach it to unlock kiln-only recipes.\n2. Fire Clay Bricks: <b>5 clay → 2 bricks</b>; large firing: <b>50 clay → 20 bricks</b>.\n3. Fire A Pot of Mountains and Seas: <b>2 or 20 pots</b> per firing.\n4. Also fires <b>Lotus, Pear Blossom, Snow-White Three-Piece Gaiwan, and White Rush Conical Cup</b>.\n5. <b>Batch firing saves materials and time</b>.\nMaster Huo tended this gentle palace kiln for half his life. Who would not envy it?"
   },
   "粘土砖": {
     name: "Clay Brick",
     desc: "Firing it seems to have removed most of the smell.",
-    detail: "1. Fired clay bricks — the core material for flowers, tea ware, pots, and more.\n2. Master Huo's Kiln can fire them in batches: 5 clay → 2 bricks, 50 clay → 20 bricks (saving materials and time).\nFiring it seems to have removed most of the smell."
+    detail: "1. Fired clay bricks — the <b>core material</b> for flowers, tea ware, pots, and more.\n2. Master Huo's Kiln can fire them in batches: <b>5 clay → 2 bricks, 50 clay → 20 bricks</b> (saving materials and time).\nFiring it seems to have removed most of the smell."
   },
   "素雪三才盏": {
     name: "Snow-White Three-Piece Gaiwan",
     desc: "Snow-White Three-Piece Gaiwan",
-    detail: "1. Tea ware; can be collected or placed in display containers.\n2. Can only be crafted at Master Huo's Kiln.\n3. Has skins: Vermilion Square Gaiwan, Celadon Dew Pitcher, Jade Lotus Gaiwan, Silver-Scale Moon Cup."
+    detail: "1. <b>Tea ware</b>; can be collected or placed in display containers.\n2. <b>Can only be crafted at Master Huo's Kiln</b>.\n3. Has skins: <b>Vermilion Square Gaiwan, Celadon Dew Pitcher, Jade Lotus Gaiwan, Silver-Scale Moon Cup</b>."
   },
   "白箬斗笠杯": {
     name: "White Rush Conical Cup",
     desc: "White Rush Conical Cup",
-    detail: "1. Tea ware; can be collected or placed in display containers.\n2. Can only be crafted at Master Huo's Kiln.\n3. Has skins: Vermilion Open Cup, Icy Lotus Cup, Green Lotus Tasting Cup, Pale-Celadon Round Pitcher."
+    detail: "1. <b>Tea ware</b>; can be collected or placed in display containers.\n2. <b>Can only be crafted at Master Huo's Kiln</b>.\n3. Has skins: <b>Vermilion Open Cup, Icy Lotus Cup, Green Lotus Tasting Cup, Pale-Celadon Round Pitcher</b>."
   },
   "一壶盛世间山海": {
     name: "A Pot of Mountains and Seas",
     desc: "A single vessel holds the rise and fall of every season.",
-    detail: "1. Use Pack on buildings or items in the world to store them in the pot and carry them with you.\n2. Place the pot to unpack items; the pot becomes empty again.\n3. The pot is not randomly colored: after packing, the pot takes the shape of a tea cup — the packed item appears as a tea cup.\n4. Put a filled pot into a display cabinet, and the packed item is shown inside the cabinet.\n5. Can also be fired in batches at Master Huo's Kiln (2 or 20 pots, saving materials and time).\nA single vessel holds the rise and fall of every season."
+    detail: "1. Use Pack on buildings or items in the world to <b>store them in the pot and carry them with you</b>.\n2. Place the pot to unpack items; the pot becomes empty again.\n3. The pot is not randomly colored: after packing, the pot takes the shape of a tea cup — the packed item appears as a tea cup.\n4. Put a filled pot into a display cabinet, and the packed item is <b>shown inside the cabinet</b>.\n5. Can also be fired in batches at Master Huo's Kiln (<b>2 or 20 pots</b>, saving materials and time).\nA single vessel holds the rise and fall of every season."
   },
   "王母娘娘的照容仙镜": {
     name: "Queen Mother's Celestial Mirror",
     desc: "A celestial dressing mirror that can reveal and reshape worldly forms.",
-    detail: "1. Activate the mirror to scan objects within range.\n2. Select a target to create a Mirror Image that can be carried or placed on display.\n3. A Mirror Image is only a reflection — no real function — and its size, height, facing, rotation, and animation speed can all be adjusted.\n4. It can also reflect the appearance of characters and creatures.\n5. A Mirror Image can be reskinned, flipped, reset, or undone.\n6. A Mirror Image cannot be copied again.\nA celestial dressing mirror that can reveal and reshape worldly forms."
+    detail: "1. Activate the mirror to <b>scan objects within range</b>.\n2. Select a target to create a <b>Mirror Image</b> that can be carried or placed on display.\n3. A Mirror Image is only a reflection — no real function — and its <b>size, height, facing, rotation, and animation speed</b> can all be adjusted.\n4. It can also <b>reflect the appearance of characters and creatures</b>.\n5. A Mirror Image can be <b>reskinned, flipped, reset, or undone</b>.\n6. <b>A Mirror Image cannot be copied again</b>.\nA celestial dressing mirror that can reveal and reshape worldly forms."
   },
   "红墙": {
     name: "Red Wall",
     desc: "A sturdy red stone wall.",
-    detail: "1. A sturdy red stone wall that blocks the path.\n2. Like the vanilla stone wall, it shows damage stages as its durability drops.\n3. Crafted from 2 Cut Stone into 6 walls (Alchemy Engine).\nA red stone wall."
+    detail: "1. A sturdy red stone wall that blocks the path.\n2. Like the vanilla stone wall, it shows <b>damage stages</b> as its durability drops.\n3. <b>2 Cut Stone → 6 walls</b> (Alchemy Engine).\nA red stone wall."
   },
   "芍药": {
     name: "Peony",
     desc: "Arrange freshly cut peonies in a vase.",
-    detail: "1. Purely decorative; it does not attract butterflies.\n2. Can be planted on the ground, picked up with right-click, and placed in containers.\n3. More flowers are coming soon — nine in total!"
+    detail: "1. Purely decorative; it <b>does not attract butterflies</b>.\n2. Can be planted on the ground, picked up with right-click, and placed in containers.\n3. More flowers are coming soon — <b>nine in total</b>!"
   },
   "梨花": {
     name: "Pear Blossom",
     desc: "Pure as snow and pale as carved jade.",
-    detail: "1. A decorative pear blossom; can be planted on the ground or picked up and carried.\n2. Can only be crafted at Master Huo's Kiln.\n3. Can be placed in display containers like the Flower Display Table and Flower Rack.\nPure as snow and pale as carved jade."
+    detail: "1. A decorative pear blossom; can be planted on the ground or picked up and carried.\n2. <b>Can only be crafted at Master Huo's Kiln</b>.\n3. Can be placed in <b>display containers</b> like the Flower Display Table and Flower Rack.\nPure as snow and pale as carved jade."
   },
   "荷花": {
     name: "Lotus",
     desc: "Lotus leaves and blossoms share the summer light.",
-    detail: "1. A decorative lotus; can be planted on the ground or picked up and carried.\n2. Can only be crafted at Master Huo's Kiln.\n3. Can be placed in display containers like the Flower Display Table and Flower Rack.\nLotus leaves and blossoms share the summer light."
+    detail: "1. A decorative lotus; can be planted on the ground or picked up and carried.\n2. <b>Can only be crafted at Master Huo's Kiln</b>.\n3. Can be placed in <b>display containers</b> like the Flower Display Table and Flower Rack.\nLotus leaves and blossoms share the summer light."
   },
   "树干": {
     name: "Driftwood",
     desc: "For decoration.",
-    detail: "1. Decorative driftwood trunks, 5 variants.\n2. Can be placed in decoration slots such as snowmen and aquariums.\nDriftwood? More like sunk wood!"
+    detail: "1. Decorative driftwood trunks, <b>5 variants</b>.\n2. Can be placed in <b>decoration slots</b> such as snowmen and aquariums.\nDriftwood? More like sunk wood!"
   },
   "石头堆": {
     name: "Rock Pile",
     desc: "For decoration.",
-    detail: "1. Decorative rock piles, 3 variants.\n2. Can be placed in decoration slots such as snowmen and aquariums.\nA few scattered stones."
+    detail: "1. Decorative rock piles, <b>3 variants</b>.\n2. Can be placed in <b>decoration slots</b> such as snowmen and aquariums.\nA few scattered stones."
   },
   "玻璃石头": {
     name: "Moonglass Rock",
     desc: "For decoration.",
-    detail: "1. Decorative moonglass rocks, 3 variants.\n2. Can be placed in decoration slots such as snowmen and aquariums.\nIt sparkles."
+    detail: "1. Decorative moonglass rocks, <b>3 variants</b>.\n2. Can be placed in <b>decoration slots</b> such as snowmen and aquariums.\nIt sparkles."
   },
   "鱼骨头": {
     name: "Fish Bones",
     desc: "For decoration.",
-    detail: "1. Decorative fish bones, 3 variants.\n2. Can be placed in decoration slots such as snowmen and aquariums.\nIs that a fish skeleton?"
+    detail: "1. Decorative fish bones, <b>3 variants</b>.\n2. Can be placed in <b>decoration slots</b> such as snowmen and aquariums.\nIs that a fish skeleton?"
   }
 };
 
@@ -238,12 +238,12 @@ function itemSearchText(item) {
     item.name,
     item.desc,
     item.category,
-    item.detail,
+    stripHtml(item.detail),
     JSON.stringify(item.recipe || {}),
     item.notes
   ];
   const en = EN_ITEMS[item.id];
-  if (en) parts.push(en.name, en.desc, en.detail);
+  if (en) parts.push(en.name, en.desc, stripHtml(en.detail));
   return normalize(parts.join(" "));
 }
 
@@ -264,6 +264,20 @@ function highlight(text, q) {
     if (i < parts.length - 1) out.push(`<span class="hl">${escapeHtml(matches[i] ?? query)}</span>`);
   }
   return out.join("");
+}
+
+const DETAIL_BOLD_RE = /(<\/?b>)/g;
+
+function stripHtml(str) {
+  return String(str ?? "").replace(/<[^>]+>/g, "");
+}
+
+function highlightDetail(text, q) {
+  const raw = String(text ?? "");
+  return raw
+    .split(DETAIL_BOLD_RE)
+    .map(seg => (seg === "<b>" || seg === "</b>" ? seg : highlight(seg, q)))
+    .join("");
 }
 
 function setHashFromState() {
@@ -579,7 +593,7 @@ else {
       const detailHtml = introLines.length ? `
         <div class="detail">
           <div class="k">${escapeHtml(uiText("detail"))}</div>
-          <div class="v">${highlight(introLines.join("\n"), q)}</div>
+          <div class="v">${highlightDetail(introLines.join("\n"), q)}</div>
         </div>
       ` : "";
 
