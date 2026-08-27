@@ -419,9 +419,6 @@
         "images/bigxians/show/王母娘娘的照容仙镜off_idle_nohandle.gif",
         "images/bigxians/show/王母娘娘的照容仙镜on_idle_nohandle.gif"
       ],
-      "images": [
-        "images/bigxians/icon/bigxian_women_queen_ui.png"
-      ],
       "recipe": {
         "station": "开始建家[images/bigxians/icon/icon_starthome_l.png]",
         "cost": [
