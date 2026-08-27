@@ -420,6 +420,17 @@ function enMainline(name) { return isEn() && EN_MAINLINES[name] ? EN_MAINLINES[n
 function enMainlineObj(m) { return isEn() && EN_MAINLINES[m.name] ? EN_MAINLINES[m.name] : null; }
 
 const carouselState = new Map();
+const carouselVisible = new Set();
+const carouselPaused = new Set();
+const carouselLastInteract = new Map();
+const carouselObserver = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    const cid = en.target.dataset.cid;
+    if (!cid) return;
+    if (en.isIntersecting) carouselVisible.add(cid);
+    else carouselVisible.delete(cid);
+  });
+}, { rootMargin: "100px" });
 function getCats(item) {
   const c = item?.category;
   if (Array.isArray(c)) return c.map(x => String(x).trim()).filter(Boolean);
@@ -968,8 +979,8 @@ else {
 
   mediaHtml = `
     <div class="media">
-      <div class="carousel">
-        <img src="${escapeHtml(imgs[safeCur])}" alt="${escapeHtml(displayName)} ${uiText("altImage")} ${safeCur + 2}" loading="lazy" />
+      <div class="carousel" data-cid="${escapeHtml(item.id)}">
+        <img src="${escapeHtml(imgs[safeCur])}" alt="${escapeHtml(displayName)} ${uiText("altImage")} ${safeCur + 2}" loading="lazy" data-cid="${escapeHtml(item.id)}" />
         <div class="carNav">
           <button class="carBtn" data-act="prev" data-id="${escapeHtml(item.id)}" aria-label="${escapeHtml(uiText("prev"))}">‹</button>
           <button class="carBtn" data-act="next" data-id="${escapeHtml(item.id)}" aria-label="${escapeHtml(uiText("next"))}">›</button>
@@ -1043,6 +1054,7 @@ else {
   const input = $("#searchInput");
   if (input && input.value !== state.query) input.value = state.query;
   applyListMode();
+  setupCarouselAuto();
 }
 
 function applyListMode() {
@@ -1051,6 +1063,38 @@ function applyListMode() {
   const cards = list.querySelectorAll(".card").length;
   const maxCols = Math.max(1, Math.floor((list.clientWidth + 16) / 256));
   list.classList.toggle("few", cards > 0 && cards < maxCols);
+}
+
+function setupCarouselAuto() {
+  carouselObserver.disconnect();
+  document.querySelectorAll("#list .carousel").forEach(c => {
+    if (c.dataset.cid) carouselObserver.observe(c);
+  });
+}
+
+function tickCarousels() {
+  const now = Date.now();
+  document.querySelectorAll("#list .carousel img[data-cid]").forEach(img => {
+    const id = img.dataset.cid;
+    if (!carouselVisible.has(id) || carouselPaused.has(id)) return;
+    if (now - (carouselLastInteract.get(id) || 0) < 4000) return;
+
+    const item = (state.data.items || []).find(x => x.id === id);
+    if (!item) return;
+    const allImgs = (Array.isArray(item.images) ? item.images.filter(Boolean) : []);
+    const imgs = allImgs.length > 1 ? allImgs.slice(1) : [];
+    if (imgs.length <= 1) return;
+
+    const cur = carouselState.get(id) || 0;
+    const next = (cur + 1) % imgs.length;
+    carouselState.set(id, next);
+
+    img.src = imgs[next];
+    img.alt = img.alt.replace(/\d+$/, String(next + 2));
+    document.querySelectorAll("#list .dot").forEach(d => {
+      if (d.dataset.id === id) d.classList.toggle("active", Number(d.dataset.i) === next);
+    });
+  });
 }
 
 
@@ -1129,9 +1173,23 @@ async function init() {
     cur = Math.max(0, Math.min(cur, imgs.length - 1));
     }
 
+    carouselLastInteract.set(id, Date.now());
     carouselState.set(id, cur);
     render();
     });
+
+  $("#list")?.addEventListener("mouseover", (e) => {
+    const c = e.target.closest(".carousel");
+    if (c && c.dataset.cid) carouselPaused.add(c.dataset.cid);
+  });
+  $("#list")?.addEventListener("mouseout", (e) => {
+    const c = e.target.closest(".carousel");
+    if (!c || !c.dataset.cid) return;
+    const to = e.relatedTarget;
+    if (!to || !to.closest || !to.closest(".carousel")) carouselPaused.delete(c.dataset.cid);
+  });
+
+  setInterval(tickCarousels, 3200);
 
   const input = $("#searchInput");
   let t = null;
