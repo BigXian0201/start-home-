@@ -95,7 +95,7 @@ const EN_MAINLINES = {
     tagline: "Dust and old relics shaken from an immortal's sleeve",
     desc: "Mythical relics: the Kunlun Jade Hairpin and the World-Vessel Pot. Reshape land and ocean freely, pack whole buildings in one click, with built-in turf storage and a movement-speed bonus."
   },
-  "浮世": {
+  "浮世偶遇": {
     name: "Miscellaneous",
     tagline: "Wandering curiosities met by chance in the mortal world",
     desc: "Small scenery pieces such as driftwood, stone chips, crystal shards, and fish bones. Place them in aquariums or snowman slots to decorate freely."
