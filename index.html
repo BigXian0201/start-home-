@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>STARTHOME！开始建家！ - 更新日记</title>
-  <meta name="description" content="STARTHOME！开始建家！ 饥荒：联机版 Mod 更新日记（更新记录 / 版本日志）" />
+  <title>STARTHOME！开始建家！ - Mod 介绍页</title>
+  <meta name="description" content="STARTHOME！开始建家！ 饥荒：联机版 Mod 介绍页（分类展示 / 全局搜索）" />
 
   <style>
     :root{
@@ -510,14 +510,6 @@
       padding-top:12px;
     }
     .detail .k{ margin-bottom:8px; }
-    .diaryTitle{
-      text-align:center;
-      color: rgb(105,65,37);
-      font-size:20px;
-      letter-spacing:4px;
-      margin:18px 0 14px;
-      font-weight:900;
-    }
     .u-head{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
     .u-date{
       display:inline-block;
@@ -635,15 +627,28 @@ header, .wrap{
     </div>
   </div>
 
+  <div class="catRow">
+    <nav class="cats" id="catBar" aria-label="分类栏"></nav>
+  </div>
+
   <div class="toolRow">
     <div class="tools">
+        <div class="search" title="全局搜索（名称/配方/详细介绍等）">
+          <img class="searchIcon" src="images/inventoryimages1/compass.png" alt="" />
+          <input id="searchInput" placeholder="搜索：物品名 / 配方 / 关键词…" autocomplete="off" />
+        </div>
+      <button class="btn" id="clearBtn">清空</button>
+      <button class="btn" id="resetBtn">重置分类</button>
       <button class="btn" id="langBtn" title="中英文切换 / Switch language">EN</button>
     </div>
   </div>
 </header>
 
 <main class="wrap">
-  <h2 class="diaryTitle" id="diaryTitle">更新日记</h2>
+  <div class="bar">
+    <div class="hint" id="resultHint">—</div>
+    <div class="pill" id="activeState">分类：全部｜搜索：无</div>
+  </div>
 
   <section class="list" id="list"></section>
   <div class="footer" id="footer"></div>
