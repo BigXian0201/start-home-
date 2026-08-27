@@ -75,10 +75,6 @@ const UI_TEXT = {
 
 const EN_CATS = {
   "全部": "All",
-  "魔法": "Magic",
-  "材料": "Materials",
-  "装饰": "Decoration",
-  "储物方案": "Storage",
   "更新日记": "Update Diary"
 };
 
