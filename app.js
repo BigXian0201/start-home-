@@ -907,6 +907,8 @@ function renderDiary() {
 
   $("#resultHint").textContent = uiText("diaryResult")(updates.length, (state.data.updates || []).length);
   $("#activeState").textContent = uiText("activeState")(activeCatLabel(), state.query);
+  $("#barRow").classList.add("diary-bar");
+  $("#activeState").hidden = true;
 
   const input = $("#searchInput");
   if (input && input.value !== state.query) input.value = state.query;
@@ -924,6 +926,8 @@ function renderList() {
 
   if (!list) throw new Error("找不到容器 #list（请确认 index.html 中有 <section id='list'>）");
   list.classList.remove("diary-mode");
+  $("#barRow").classList.remove("diary-bar");
+  $("#activeState").hidden = false;
 
   if (!items.length) {
     list.innerHTML = `
