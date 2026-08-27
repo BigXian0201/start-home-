@@ -588,28 +588,20 @@
       align-items:center;
     }
     .homeIntro{
-      width:min(780px,100%);
+      width:min(900px,100%);
       text-align:center;
-      padding:26px 28px;
+      padding:34px 40px;
     }
     .homeTitle{
       margin:0 0 14px;
-      font-size:24px;
+      font-size:26px;
       font-weight:900;
       letter-spacing:2px;
       color: rgb(105,65,37);
     }
-    .homeBanner{
-      width:100%;
-      max-width:100%;
-      height:auto;
-      display:block;
-      border-radius:10px;
-      margin-bottom:14px;
-    }
     .homeLead{
       margin-top:10px;
-      font-size:14px;
+      font-size:15px;
       line-height:2;
       color: var(--ink);
     }
@@ -674,9 +666,27 @@
       gap:16px;
     }
     .homeCat{
+      position:relative;
+      overflow:hidden;
       cursor:pointer;
       padding:20px 18px;
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .homeCatBg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.22;
+      pointer-events:none;
+      z-index:0;
+    }
+    .homeCat h3,
+    .homeCat .tagline,
+    .homeCat .desc{
+      position:relative;
+      z-index:1;
     }
     .homeCat:hover{
       transform: translateY(-3px);
@@ -947,7 +957,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-17"></script>
+<script src="./app.js?v=20260828-18"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

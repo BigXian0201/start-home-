@@ -585,7 +585,6 @@ function renderHome() {
   const enHome = isEn() ? EN_HOME : null;
   home.innerHTML = `
     <article class="homeIntro card">
-      ${intro.image ? `<img class="homeBanner" src="${escapeHtml(intro.image)}" alt="" />` : ""}
       <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
       ${intro.lead ? `<div class="homeLead">${escapeHtml((enHome && enHome.lead) || intro.lead)}</div>` : ""}
     </article>
@@ -594,6 +593,7 @@ function renderHome() {
         const en = enMainlineObj(m);
         return `
           <div class="homeCat card" data-main="${escapeHtml(m.name)}">
+            ${m.bg ? `<img class="homeCatBg" src="${escapeHtml(m.bg)}" alt="" />` : ""}
             <h3>${escapeHtml(enMainline(m.name))}</h3>
             ${(en && en.tagline) || m.tagline ? `<div class="tagline">${escapeHtml((en && en.tagline) || m.tagline)}</div>` : ""}
             <div class="desc">${escapeHtml((en && en.desc) || m.desc || "")}</div>
