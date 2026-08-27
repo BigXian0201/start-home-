@@ -585,10 +585,10 @@ function renderHome() {
   const enHome = isEn() ? EN_HOME : null;
   home.innerHTML = `
     <article class="homeIntro card">
+      ${intro.image ? `<img class="homeBanner" src="${escapeHtml(intro.image)}" alt="" />` : ""}
       <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
       ${intro.lead ? `<div class="homeLead">${escapeHtml((enHome && enHome.lead) || intro.lead)}</div>` : ""}
     </article>
-    <div class="homeSec">${escapeHtml(uiText("homeSecCats"))}</div>
     <div class="homeCats">
       ${mains.map(m => {
         const en = enMainlineObj(m);
