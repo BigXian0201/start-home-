@@ -858,6 +858,7 @@ function renderDiary() {
   const q = state.query;
 
   if (!list) throw new Error("找不到容器 #list（请确认 index.html 中有 <section id='list'>）");
+  list.classList.add("diary-mode");
 
   if (!updates.length) {
     list.innerHTML = `
@@ -910,6 +911,7 @@ function renderList() {
   const q = state.query;
 
   if (!list) throw new Error("找不到容器 #list（请确认 index.html 中有 <section id='list'>）");
+  list.classList.remove("diary-mode");
 
   if (!items.length) {
     list.innerHTML = `
