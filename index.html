@@ -384,7 +384,7 @@
       padding:10px;
       min-height:56px;
     }
-    .k{color:var(--muted); font-size:12px; margin-bottom:6px}
+    .k{color:var(--muted); font-size:13px; font-weight:700; letter-spacing:.5px; margin-bottom:6px}
     .v{font-size:13px; line-height:1.55; white-space:pre-wrap}
     .hl{background: rgba(184,157,68,.22); border-radius:6px; padding:0 2px}
     .v b, .desc b{
@@ -708,17 +708,22 @@
     }
 
     /* 三大主线筛选栏 */
-    .mainlineRow{
-      max-width:100%;
-      margin:0 auto;
-      padding:10px 16px 0;
-    }
     .mainlines{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
       justify-content:center;
+    }
+    .tagCats{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
+    .cats.filterRow{
+      flex-wrap:wrap;
     }
     .chip-main{
       font-size:14px;
@@ -885,11 +890,10 @@ header, .wrap{
   </div>
 
   <div class="catRow" id="catRow">
-    <nav class="cats" id="catBar" aria-label="分类栏"></nav>
-  </div>
-
-  <div class="mainlineRow" id="mainlineRow">
-    <div class="mainlines" id="mainlineBar"></div>
+    <div class="cats filterRow">
+      <div class="mainlines" id="mainlineBar"></div>
+      <div class="tagCats" id="catBar" aria-label="分类栏"></div>
+    </div>
   </div>
 
   <div class="toolRow">
@@ -900,7 +904,6 @@ header, .wrap{
         </div>
       <button class="btn" id="clearBtn">清空</button>
       <button class="btn" id="resetBtn">重置分类</button>
-      <button class="btn" id="homeBtn" title="返回首页" hidden>返回首页</button>
       <button class="btn" id="themeBtn" title="切换深色/浅色主题">🌙</button>
       <button class="btn" id="langBtn" title="中英文切换 / Switch language">EN</button>
     </div>
@@ -918,7 +921,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-14"></script>
+<script src="./app.js?v=20260828-15"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

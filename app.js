@@ -75,6 +75,10 @@ const UI_TEXT = {
 
 const EN_CATS = {
   "全部": "All",
+  "魔法": "Magic",
+  "材料": "Materials",
+  "装饰": "Decoration",
+  "储物方案": "Storage",
   "更新日记": "Update Diary"
 };
 
@@ -648,11 +652,9 @@ function setViewUI() {
   $("#list").hidden = home;
   $("#searchBox").hidden = home;
   $("#catRow").hidden = home;
-  $("#mainlineRow").hidden = home;
   $("#barRow").hidden = home;
   $("#clearBtn").hidden = home;
   $("#resetBtn").hidden = home;
-  $("#homeBtn").hidden = home;
 }
 
 function renderCats() {
@@ -667,19 +669,27 @@ function renderCats() {
 
   cats.forEach(cat => {
     const el = document.createElement("div");
-    const isAll = cat === "全部";
-    const active = isAll ? state.activeCats.length === 0 : state.activeCats.includes(cat);
-    el.className = "chip" + (active ? " active" : "");
+    if (cat === "全部") {
+      el.className = "chip chip-main";
+      el.textContent = uiText("backHome");
+      el.addEventListener("click", () => {
+        state.view = "home";
+        state.mainline = "";
+        state.activeCats = [];
+        setHashFromState();
+        render();
+      });
+      bar.appendChild(el);
+      return;
+    }
 
-    const count = cat === "更新日记"
-      ? (state.data.updates || []).length
-      : (counts[cat] || 0);
+    const active = state.activeCats.includes(cat);
+    el.className = "chip" + (active ? " active" : "");
+    const count = cat === "更新日记" ? (state.data.updates || []).length : (counts[cat] || 0);
     el.textContent = count ? `${enCat(cat)} ${count}` : enCat(cat);
 
     el.addEventListener("click", () => {
-      if (isAll) {
-        state.activeCats = [];
-      } else if (cat === "更新日记") {
+      if (cat === "更新日记") {
         state.activeCats = [cat];
       } else {
         state.activeCats = state.activeCats.filter(c => c !== "更新日记");

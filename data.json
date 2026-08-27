@@ -49,6 +49,9 @@
       "mainline": "市井天工",
       "name": "实木长条桌",
       "desc": "好大的桌子呀~",
+      "category": [
+        "储物方案"
+      ],
       "detail": "1)**9格子的箱子**\n2)**食物料理永久保鲜**\n3)物品可堆叠、能放置任意物品\n4)配有专属ui",
       "images": [
         "images/bigxians/icon/bigxian_desk.png",
@@ -78,6 +81,9 @@
       "mainline": "浮世偶遇",
       "name": "花几",
       "desc": "放点装饰品吧",
+      "category": [
+        "储物方案"
+      ],
       "detail": "1)**单格的箱子**\n2)**食物料理永久保鲜**\n3)物品可堆叠、能放置任意物品\n4)拥有皮肤：**铁艺、乡村**",
       "images": [
         "images/bigxians/icon/huaji.png",
@@ -100,6 +106,9 @@
       "mainline": "市井天工",
       "name": "老木匠的传家宝",
       "desc": "用木板搭建柜体框架，切割出隔板与抽屉的形状……",
+      "category": [
+        "储物方案"
+      ],
       "detail": "1)**20格子的箱子**、不保鲜、可以堆叠、能放置任意物品\n2)配有专属ui\n3)**超超超极大的展示柜子**。能把你搜罗来的宝贝全部都展示出来！\n4)保留该物品原有的落地动画效果\n注：游戏内分为两个独立配方：「老木匠的传家宝」与「老木匠的第二个传家宝」，两者功能相同、外观不同，均可四向旋转",
       "images": [
         "images/bigxians/icon/chuanjiabao.png",
@@ -127,6 +136,9 @@
       "mainline": "市井天工",
       "name": "老渔翁的家藏珍",
       "desc": "中式花纹配上琉璃就能养起漂亮的鱼~",
+      "category": [
+        "储物方案"
+      ],
       "detail": "1)**无限格子的保鲜鱼缸**\n2)可以装饰，**装饰品跟雪人通用**\n3)宝贝谁再说你是空军我第一个不服\n4)用锤子敲它",
       "images": [
         "images/bigxians/icon/bigxian_aquarium.png",
@@ -152,6 +164,9 @@
       "mainline": "仙尘旧物",
       "name": "王母娘娘的昆仑玉簪",
       "desc": "据说娘娘曾用此发簪划分天河……",
+      "category": [
+        "魔法"
+      ],
       "detail": "1) 右键开启可以**转换陆地与海洋**\n2)自带**无上限存放地皮的容器**，放入地皮可在将海洋转换为陆地时自动使用\n3)塞入不同颜色的宝石解锁**不同颜色的照明**，范围随宝石数量增多而变大\n4)**移动速度+25%**\n5)服务器可设置**制作权限**：全员制作（默认）或仅管理员制作",
       "images": [
         "images/bigxians/icon/bigxian_kunlun_hairpin.png",
@@ -186,6 +201,9 @@
       "mainline": "市井天工",
       "name": "小木匠出师作",
       "desc": "师父师父，你看我终于独立做出来一件作品啦！",
+      "category": [
+        "储物方案"
+      ],
       "detail": "1)可升级的展示花架：**1级4格 → 2级11格 → 3级18格**\n2)手持木板右键升级，**每级消耗5块木板**，最高3级\n3)物品可堆叠、能放置任意物品，放入的物品会**直接展示在花架上**\n拾花两三阶，揽芳千百架，藏物一庭华。",
       "images": [
         "images/bigxians/icon/bigxian_huajia.png",
@@ -208,6 +226,9 @@
       "mainline": "浮世偶遇",
       "name": "一块有味道且很粘的土",
       "desc": "那很粘了！",
+      "category": [
+        "材料"
+      ],
       "detail": "1)**粘土原料**，可精炼为粘土砖\n2)在火师傅宝窑**批量烧制更划算**\n那很粘了！",
       "images": [
         "images/bigxians/icon/bigxian_clay.png",
@@ -260,6 +281,9 @@
       "mainline": "浮世偶遇",
       "name": "粘土砖",
       "desc": "经过炮制味道似乎没那么大了。",
+      "category": [
+        "材料"
+      ],
       "detail": "1)烧制后的粘土砖，是花、茶具、宝壶等物品的**核心材料**\n2)火师傅宝窑可批量烧制：**5块土→2块砖，50块土→20块砖**（更省材料和时间）\n经过炮制味道似乎没那么大了。",
       "images": [
         "images/bigxians/icon/bigxian_clay_brick.png",
@@ -280,6 +304,9 @@
       "mainline": "浮世偶遇",
       "name": "素雪三才盏",
       "desc": "素雪三才盏",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)**茶具**，可收藏或放进展示容器\n2)**只能在火师傅宝窑制作**\n3)拥有皮肤：**朱红四棱盖碗、天青引露公盂、翠荷承莲盖碗、银鳞望月盅**",
       "images": [
         "images/bigxians/icon/chahu9.png",
@@ -308,6 +335,9 @@
       "mainline": "浮世偶遇",
       "name": "白箬斗笠杯",
       "desc": "白箬斗笠杯",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)**茶具**，可收藏或放进展示容器\n2)**只能在火师傅宝窑制作**\n3)拥有皮肤：**朱红敞口盏、冰菱青荷盏、碧荷单酌杯、浅青圆腹盂**",
       "images": [
         "images/bigxians/icon/chahu10.png",
@@ -360,6 +390,9 @@
       "mainline": "仙尘旧物",
       "name": "王母娘娘的照容仙镜",
       "desc": "常设瑶池妆台梳鬓，亦可持镜照破世间虚妄。",
+      "category": [
+        "魔法"
+      ],
       "detail": "1)右键激活仙镜，可**照出范围内的物件**\n2)选中目标即可生成「**镜中幻形**」，能随身携带或摆放展示\n3)镜中幻形只有形影、没有功能，可**调整大小、高度、朝向、旋转与动画速度**\n4)也能**照出人物与生物的外形**\n5)可为幻形**更换皮肤、镜像翻转、还原或撤销操作**\n6)**镜中幻形无法再次复制**\n常设瑶池妆台梳鬓，亦可持镜照破世间虚妄。",
       "images": [
         "images/bigxians/icon/bigxian_women_queen_ui.png",
@@ -408,6 +441,9 @@
       "mainline": "浮世偶遇",
       "name": "芍药",
       "desc": "把鲜切芍药放进花瓶",
+      "category": [
+        "装饰"
+      ],
       "detail": "1) 单纯的装饰，**无法引来蝴蝶**\n2)可种植于地面，通过右键操作可拿起来，也能放置在容器内。\n3)后续会陆续再出几种花、**凑够9个**！",
       "images": [
         "images/bigxians/icon/shaoyao.png",
@@ -432,6 +468,9 @@
       "mainline": "浮世偶遇",
       "name": "梨花",
       "desc": "雪作肌肤玉作容，不将妖艳嫁东风",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用梨花，可种植在地面，也能收起来随身携带\n2)**只能在火师傅宝窑制作**\n3)可以放进花几、花架等**容器展示**\n雪作肌肤玉作容，不将妖艳嫁东风",
       "images": [
         "images/bigxians/icon/bigxian_li_hua_item.png",
@@ -456,6 +495,9 @@
       "mainline": "浮世偶遇",
       "name": "荷花",
       "desc": "荷叶罗裙一色裁，芙蓉向脸两边开",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用荷花，可种植在地面，也能收起来随身携带\n2)**只能在火师傅宝窑制作**\n3)可以放进花几、花架等**容器展示**\n荷叶罗裙一色裁，芙蓉向脸两边开",
       "images": [
         "images/bigxians/icon/bigxian_he_hua_item.png",
@@ -480,6 +522,9 @@
       "mainline": "浮世偶遇",
       "name": "树干",
       "desc": "装饰用",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用浮木树干，**共5种造型**\n2)可以放进雪人、鱼缸等**装饰位**\n浮木？沉木！",
       "images": [
         "images/bigxians/icon/bigxian_wood1.png",
@@ -504,6 +549,9 @@
       "mainline": "浮世偶遇",
       "name": "石头堆",
       "desc": "装饰用",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用石头堆，**共3种造型**\n2)可以放进雪人、鱼缸等**装饰位**\n几个零散的石头",
       "images": [
         "images/bigxians/icon/bigxian_rock1.png",
@@ -526,6 +574,9 @@
       "mainline": "浮世偶遇",
       "name": "玻璃石头",
       "desc": "装饰用",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用玻璃石头，**共3种造型**\n2)可以放进雪人、鱼缸等**装饰位**\n亮晶晶的",
       "images": [
         "images/bigxians/icon/bigxian_moonglass_rock1.png",
@@ -548,6 +599,9 @@
       "mainline": "浮世偶遇",
       "name": "鱼骨头",
       "desc": "装饰用",
+      "category": [
+        "装饰"
+      ],
       "detail": "1)装饰用鱼骨头，**共3种造型**\n2)可以放进雪人、鱼缸等**装饰位**\n鱼的骨架吗？",
       "images": [
         "images/bigxians/icon/bigxian_fishbones1.png",
