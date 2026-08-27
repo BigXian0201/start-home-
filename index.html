@@ -588,9 +588,17 @@
       align-items:center;
     }
     .homeIntro{
-      width:min(900px,100%);
+      width:min(1080px,100%);
       text-align:center;
       padding:34px 40px;
+    }
+    .homeBanner{
+      width:100%;
+      max-width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      margin-bottom:14px;
     }
     .homeTitle{
       margin:0 0 14px;
@@ -668,13 +676,20 @@
       background: rgba(255,255,255,.85);
     }
     .homeCredits{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:4px 16px;
       margin-top:14px;
       padding-top:12px;
       border-top:1px solid rgba(42,26,16,.10);
       font-size:12px;
       color: var(--muted);
       line-height:1.8;
-      white-space:pre-wrap;
+    }
+    .homeCreditLine{
+      display:inline-flex;
+      align-items:center;
     }
     .homeCats{
       width:100%;
@@ -941,7 +956,7 @@ header, .wrap{
 
 <body>
 <header>
-  <div class="head">
+  <div class="head" id="headBar">
     <div class="headInner">
       <div class="title" id="titleLine">STARTHOME！开始建家！</div>
       <div class="subtitle" id="versionLine">加载中…</div>
@@ -980,7 +995,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-19"></script>
+<script src="./app.js?v=20260828-20"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

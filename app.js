@@ -584,6 +584,7 @@ function renderHome() {
   const enHome = isEn() ? EN_HOME : null;
   home.innerHTML = `
     <article class="homeIntro card">
+      ${intro.image ? `<img class="homeBanner" src="${escapeHtml(intro.image)}" alt="" />` : ""}
       <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
       ${intro.lead ? `<div class="homeLead">${escapeHtml((enHome && enHome.lead) || intro.lead)}</div>` : ""}
     </article>
@@ -602,7 +603,14 @@ function renderHome() {
     </div>
     <article class="homeIntro card homeThanks">
       <h3 class="homeSecTitle">${escapeHtml(uiText("homeSecThanks"))}</h3>
-      ${intro.credits ? `<div class="homeCredits">${escapeHtml((enHome && enHome.credits) || intro.credits)}</div>` : ""}
+      ${(() => {
+        const creditsText = (enHome && enHome.credits) || intro.credits || "";
+        const lines = creditsText.split("\n").map(s => s.trim()).filter(Boolean);
+        return lines.length ? `
+          <div class="homeCredits">
+            ${lines.map(c => `<span class="homeCreditLine">${escapeHtml(c)}</span>`).join("")}
+          </div>` : "";
+      })()}
       ${Array.isArray(intro.links) && intro.links.length ? `
         <div class="homeLinks">
           ${intro.links.map(l =>
@@ -654,6 +662,7 @@ function renderMainlines() {
 
 function setViewUI() {
   const home = state.view === "home";
+  $("#headBar").hidden = home;
   $("#home").hidden = !home;
   $("#list").hidden = home;
   $("#searchBox").hidden = home;
