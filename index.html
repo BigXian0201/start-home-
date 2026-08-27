@@ -573,10 +573,36 @@
       letter-spacing:2px;
       color: rgb(105,65,37);
     }
-    .homeBody{
+    .homeLead{
+      margin-top:10px;
       font-size:14px;
       line-height:2;
       color: var(--ink);
+    }
+    .homeSec{
+      width:100%;
+      max-width:1080px;
+      text-align:center;
+      font-size:15px;
+      font-weight:900;
+      letter-spacing:2px;
+      color: rgb(105,65,37);
+      margin-top:8px;
+    }
+    .homeThanks{ text-align:center; }
+    .homeSecTitle{
+      margin:0 0 12px;
+      font-size:16px;
+      font-weight:900;
+      color: rgb(105,65,37);
+    }
+    .homeLinks{
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px solid rgba(42,26,16,.10);
+      font-size:13px;
+      color: var(--ink);
+      line-height:2;
       white-space:pre-wrap;
     }
     .homeCredits{
@@ -743,6 +769,11 @@
       color: #f0c060;
       background: rgba(184,157,68,.18);
     }
+    html[data-theme="dark"] .homeTitle,
+    html[data-theme="dark"] .homeSec,
+    html[data-theme="dark"] .homeSecTitle,
+    html[data-theme="dark"] .homeCat h3{ color: #f0c060; }
+    html[data-theme="dark"] .homeLinks{ border-top-color: rgba(242,230,216,.12); }
 
 
 header, .wrap{
@@ -865,7 +896,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-4"></script>
+<script src="./app.js?v=20260828-5"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

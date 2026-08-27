@@ -22,6 +22,8 @@ const UI_TEXT = {
     themeBtn: "切换深色/浅色主题",
     viewAll: "查看全部物件",
     backHome: "返回首页",
+    homeSecCats: "🏮 模组三大类目",
+    homeSecThanks: "🤍 制作致谢与支持通道",
     catAria: "分类栏",
     noImage: "未配置图片：在 data.json 的 images 数组里填入 images/xxx.png",
     recipe: "配方",
@@ -50,6 +52,8 @@ const UI_TEXT = {
     themeBtn: "Toggle dark/light theme",
     viewAll: "View All Items",
     backHome: "Back to Home",
+    homeSecCats: "🏮 Three Main Lines",
+    homeSecThanks: "🤍 Credits & Support",
     catAria: "Category bar",
     noImage: "No image: add images/xxx.png to the images array in data.json",
     recipe: "Recipe",
@@ -84,23 +88,24 @@ const EN_MAINLINES = {
   "市井天工": {
     name: "Worldly Crafts",
     tagline: "Divine craftsmanship within mortal life",
-    desc: "Everyday oriental furniture and wares: display cabinets, plant stands, tea ware, flowers, and storage tables. Build a kiln to fire clay bricks and decorations in batches."
+    desc: "Daily-life oriental wares: Chinese tables and chairs, display cabinets and flower racks, tea ware and ceramics, plants, and fresh-keeping storage furniture. A kiln system lets you fire clay building materials and decorations by hand or in batches."
   },
   "仙尘旧物": {
     name: "Fairy Relics",
     tagline: "Dust and old relics shaken from an immortal's sleeve",
-    desc: "Myth-themed utilities: the Kunlun Jade Hairpin, the World-Vessel Pot, and the Celestial Mirror. Reshape land and ocean, pack buildings to carry them along, and reflect ten thousand forms."
+    desc: "Mythical relics: the Kunlun Jade Hairpin and the World-Vessel Pot. Reshape land and ocean freely, pack whole buildings in one click, with built-in turf storage and a movement-speed bonus."
   },
-  "浮世偶遇": {
+  "浮世": {
     name: "Miscellaneous",
     tagline: "Wandering curiosities met by chance in the mortal world",
-    desc: "Scattered trinkets: driftwood, rock piles, moonglass shards, and fish bones. Place them in aquariums or snowman decoration slots to dress up your scenes."
+    desc: "Small scenery pieces such as driftwood, stone chips, crystal shards, and fish bones. Place them in aquariums or snowman slots to decorate freely."
   }
 };
 
 const EN_HOME = {
-  body: "Let's start building a home!\nAfter cooking so many dishes, they deserve a proper display!\nAll those beautiful collectibles should be shown off too!\n\nMore decorative furniture will continue to be added. We hope it brightens your Don't Starve world!",
-  credits: "Art: BigXian\nCode: San, mooncake\nSpecial thanks: San, Xiaohuahua (aquarium logic)\nFeedback QQ group: 199540863"
+  lead: "Made for base-building players who love scenery, collections and oriental soft furnishing. Focused on Chinese-style decor, landscape props and building utilities to create your own oriental courtyard.",
+  credits: "Art & Animation: BigXian喵大仙\nCode thanks: San, mooncake, Huahua\nDST art commissions open — furniture, items, character textures",
+  links: "📺 Bilibili: 喵大仙BigXian\n📕 Xiaohongshu: 喵大仙BigXian\n💬 Feedback QQ group: 199540863"
 };
 
 const EN_STATIONS = {
@@ -572,21 +577,26 @@ function renderHome() {
   home.innerHTML = `
     <article class="homeIntro card">
       <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
-      <div class="homeBody">${escapeHtml((enHome && enHome.body) || intro.body || "")}</div>
-      ${intro.credits ? `<div class="homeCredits">${escapeHtml((enHome && enHome.credits) || intro.credits)}</div>` : ""}
+      ${intro.lead ? `<div class="homeLead">${escapeHtml((enHome && enHome.lead) || intro.lead)}</div>` : ""}
     </article>
+    <div class="homeSec">${escapeHtml(uiText("homeSecCats"))}</div>
     <div class="homeCats">
       ${mains.map(m => {
         const en = enMainlineObj(m);
         return `
           <div class="homeCat card" data-main="${escapeHtml(m.name)}">
             <h3>${escapeHtml(enMainline(m.name))}</h3>
-            <div class="tagline">${escapeHtml((en && en.tagline) || m.tagline || "")}</div>
+            ${(en && en.tagline) || m.tagline ? `<div class="tagline">${escapeHtml((en && en.tagline) || m.tagline)}</div>` : ""}
             <div class="desc">${escapeHtml((en && en.desc) || m.desc || "")}</div>
           </div>
         `;
       }).join("")}
     </div>
+    <article class="homeIntro card homeThanks">
+      <h3 class="homeSecTitle">${escapeHtml(uiText("homeSecThanks"))}</h3>
+      ${intro.credits ? `<div class="homeCredits">${escapeHtml((enHome && enHome.credits) || intro.credits)}</div>` : ""}
+      ${intro.links ? `<div class="homeLinks">${escapeHtml((enHome && enHome.links) || intro.links)}</div>` : ""}
+    </article>
     <button class="homeAllBtn" id="homeAllBtn">${escapeHtml(uiText("viewAll"))}</button>
   `;
 }
