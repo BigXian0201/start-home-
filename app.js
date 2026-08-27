@@ -208,65 +208,166 @@ const EN_ITEMS = {
 
 const EN_UPDATES = {
   "2026-08-28": {
-    title: "v1.2.4 Display Polish",
+    title: "Celestial Mirror & English Language",
     changes: [
-      "Added two mirror display animations (idle & activated)",
-      "Old Carpenter's Heirloom got an idle animation, set as the first display image",
-      "Added mirror & red wall icons and flower table skin icons",
-      "Key attributes in item details (slot counts, special effects, etc.) are now bold-highlighted",
-      "Documented hairpin crafting permission and mirror features",
-      "Fixed flower table images: removed the blurry duplicate skin icons"
+      "Added the Queen Mother's Celestial Mirror",
+      "Added English language support"
     ]
   },
-  "2026-08-12": {
-    title: "Kunlun Jade Hairpin Cursor",
+  "2026-07-20": {
+    title: "Queen Mother Settings & Bug Fixes",
     changes: [
-      "Replaced the mouse cursor with the Queen Mother's Kunlun Jade Hairpin icon",
-      "Mirrored the hairpin cursor and set the hotspot to the top-left",
-      "Added a sparkling star cursor trail effect"
+      "Fixed some bugs",
+      "Added settings for the Queen Mother's hairpin"
     ]
   },
-  "2026-08-11": {
-    title: "Celestial Mirror & Red Wall",
+  "2026-07-14": {
+    title: "Tea Cups Now Fired in the Kiln",
     changes: [
-      "Added the Queen Mother's Celestial Mirror and Red Wall (bilingual)",
-      "Added a Chinese/English toggle for UI text, item names, descriptions, details, categories, materials, and crafting stations"
+      "Fixed some bugs",
+      "Decorative tea cups must now be fired in the kiln"
     ]
   },
-  "2026-08-10": {
-    title: "Intro Page Copy & Display Polish",
+  "2026-07-12": {
+    title: "Crafting Filter, Flower Rack & Kiln",
     changes: [
-      "Item descriptions now use crafting recipe descriptions; details keep feature notes",
-      "Items are sorted by in-code creation time: flower decorations last, stone/wood/fish/moonglass at the end",
-      "Fixed multi-station parsing: the Pot shows both Start Building Home and Master Huo's Kiln",
-      "Tea ware skins grouped by height: Gaiwan uses odd-numbered skins, the conical cup uses even-numbered skins",
-      "Split Rock Pile and Moonglass Rock into separate entries; the flower rack shows all three stages",
-      "Added kiln, clay, tea ware, and decoration display images"
+      "Added the Start Building Home crafting filter — no more hunting for recipes",
+      "Added a new upgradeable display rack",
+      "Added a new kiln building",
+      "Added new craftables: clay and clay bricks",
+      "Added two new flower/plant decorations",
+      "The packing pot is now crafted at the kiln",
+      "Packing pots can now stack",
+      "Packing pots can no longer pack materials — only items that cannot fit in the inventory"
     ]
   },
-  "2026-08-09": {
-    title: "Kiln & Material System",
+  "2026-06-24-1": {
+    title: "Bug Fix",
     changes: [
-      "Added kiln, material, and decoration items to the intro page",
-      "Merged Heirloom 1 and 2"
+      "Fixed some bugs"
     ]
   },
-  "2026-08-07": {
-    title: "Data Cleanup",
+  "2026-06-24-2": {
+    title: "Tea Cup Names & Descriptions",
     changes: [
-      "Fixed data.json formatting and removed duplicate items"
+      "Updated the names and descriptions of decorative tea cups"
     ]
   },
-  "2026-03-13": {
-    title: "Aquarium Added",
+  "2026-06-24-3": {
+    title: "Tea Cup Decor & Size Reduction",
     changes: [
-      "Added the Old Fisherman's Treasured Aquarium"
+      "Cleaned up legacy files to reduce the mod's size",
+      "Added a set of tea cup decorations to make up for the cabinet's inability to display cups"
     ]
   },
-  "2026-01-28": {
-    title: "Initial Release",
+  "2026-06-23": {
+    title: "Bug Fixes & Skin Name Fix",
     changes: [
-      "Launched the Start Building Home mod intro page"
+      "Fixed decorations not showing their recipes",
+      "Fixed a packing pot bug",
+      "Fixed garbled flower rack skin names"
+    ]
+  },
+  "2026-06-22": {
+    title: "Aquarium Decor, Packing Pot & Display Improvements",
+    changes: [
+      "Added 14 aquarium decorations",
+      "Added a very cheap one-time packing pot",
+      "Improved the display logic of cabinets, tables, and flower tables so they can show items inside packing pots",
+      "Improved the aquarium fish rendering logic"
+    ]
+  },
+  "2026-03-31": {
+    title: "Minor Bug Fix",
+    changes: [
+      "Fixed a few small bugs"
+    ]
+  },
+  "2026-03-21": {
+    title: "Aquarium Decor Limit Adjust",
+    changes: [
+      "Adjusted the aquarium decoration limit",
+      "Too many decorations may put some load on the server"
+    ]
+  },
+  "2026-03-16-1": {
+    title: "Cabinet Build Animation",
+    changes: [
+      "Optimized the cabinet creation animation"
+    ]
+  },
+  "2026-03-16-2": {
+    title: "Heirloom Texture Polish",
+    changes: [
+      "Optimized the heirloom textures"
+    ]
+  },
+  "2026-03-14-1": {
+    title: "Heirloom Rotation",
+    changes: [
+      "The heirloom can now be rotated by hitting it"
+    ]
+  },
+  "2026-03-14-2": {
+    title: "Aquarium, Wiki Entry & Preservation Config",
+    changes: [
+      "Added an aquarium — keep fish and decorate it",
+      "Added a mod wiki link below the self-inspect screen",
+      "Added a config for the solid wood table to freely choose food preservation"
+    ]
+  },
+  "2026-01-29": {
+    title: "Bug Fix",
+    changes: [
+      "Fixed bugs"
+    ]
+  },
+  "2026-01-26": {
+    title: "Kunlun Jade Hairpin",
+    changes: [
+      "Added the functional item: Queen Mother's Kunlun Jade Hairpin"
+    ]
+  },
+  "2026-01-04": {
+    title: "Table Crash Fix",
+    changes: [
+      "Fixed the crash when hitting the table"
+    ]
+  },
+  "2025-12-31": {
+    title: "Bug Fix",
+    changes: [
+      "Fixed some bugs"
+    ]
+  },
+  "2025-11-15": {
+    title: "Old Carpenter's Heirloom",
+    changes: [
+      "Added new items: Old Carpenter's Heirloom x2"
+    ]
+  },
+  "2025-10-29": {
+    title: "UI Stutter Fix",
+    changes: [
+      "Fixed the UI stutter when closing containers"
+    ]
+  },
+  "2025-10-26": {
+    title: "Peony Position",
+    changes: [
+      "Adjusted the peony position"
+    ]
+  },
+  "2025-10-25": {
+    title: "New Cover",
+    changes: [
+      "Updated the mod cover image"
+    ]
+  },
+  "2025-10-24": {
+    title: "Workshop Launch",
+    changes: [
+      "First published on the Steam Workshop"
     ]
   }
 };
@@ -277,7 +378,7 @@ function enCat(c) { return isEn() && EN_CATS[c] ? EN_CATS[c] : c; }
 function enStation(label) { return isEn() && EN_STATIONS[label] ? EN_STATIONS[label] : label; }
 function enMat(label) { return isEn() && EN_MATS[label] ? EN_MATS[label] : label; }
 function enItem(item) { return isEn() && EN_ITEMS[item.id] ? EN_ITEMS[item.id] : null; }
-function enUpdate(u) { return isEn() && EN_UPDATES[u.date] ? EN_UPDATES[u.date] : null; }
+function enUpdate(u) { return isEn() && EN_UPDATES[u.id] ? EN_UPDATES[u.id] : null; }
 
 const carouselState = new Map();
 function getCats(item) {
