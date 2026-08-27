@@ -624,10 +624,11 @@ function renderMainlines() {
   bar.innerHTML = "";
 
   const all = document.createElement("div");
-  all.className = "chip chip-main" + (state.mainline ? "" : " active");
+  all.className = "chip chip-main" + (state.mainline || state.activeCats.length ? "" : " active");
   all.textContent = enCat("全部");
   all.addEventListener("click", () => {
     state.mainline = "";
+    state.activeCats = [];
     setHashFromState();
     render();
   });
@@ -639,6 +640,7 @@ function renderMainlines() {
     el.textContent = enMainline(m.name);
     el.addEventListener("click", () => {
       state.mainline = m.name;
+      state.activeCats = [];
       setHashFromState();
       render();
     });
@@ -669,19 +671,7 @@ function renderCats() {
 
   cats.forEach(cat => {
     const el = document.createElement("div");
-    if (cat === "全部") {
-      el.className = "chip chip-main";
-      el.textContent = uiText("backHome");
-      el.addEventListener("click", () => {
-        state.view = "home";
-        state.mainline = "";
-        state.activeCats = [];
-        setHashFromState();
-        render();
-      });
-      bar.appendChild(el);
-      return;
-    }
+    if (cat === "全部") return;
 
     const active = state.activeCats.includes(cat);
     el.className = "chip" + (active ? " active" : "");
@@ -691,6 +681,7 @@ function renderCats() {
     el.addEventListener("click", () => {
       if (cat === "更新日记") {
         state.activeCats = [cat];
+        state.mainline = "";
       } else {
         state.activeCats = state.activeCats.filter(c => c !== "更新日记");
         const i = state.activeCats.indexOf(cat);
@@ -703,6 +694,18 @@ function renderCats() {
 
     bar.appendChild(el);
   });
+
+  const homeEl = document.createElement("div");
+  homeEl.className = "chip chip-main";
+  homeEl.textContent = uiText("backHome");
+  homeEl.addEventListener("click", () => {
+    state.view = "home";
+    state.mainline = "";
+    state.activeCats = [];
+    setHashFromState();
+    render();
+  });
+  bar.appendChild(homeEl);
 }
 
 function activeCatLabel() {
