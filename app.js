@@ -423,6 +423,7 @@ const carouselState = new Map();
 const carouselVisible = new Set();
 const carouselPaused = new Set();
 const carouselLastInteract = new Map();
+const carouselSwitching = new Set();
 const carouselObserver = new IntersectionObserver((entries) => {
   entries.forEach(en => {
     const cid = en.target.dataset.cid;
@@ -1078,6 +1079,7 @@ function tickCarousels() {
     const id = img.dataset.cid;
     if (!carouselVisible.has(id) || carouselPaused.has(id)) return;
     if (now - (carouselLastInteract.get(id) || 0) < 4000) return;
+    if (carouselSwitching.has(id)) return;
 
     const item = (state.data.items || []).find(x => x.id === id);
     if (!item) return;
@@ -1089,11 +1091,18 @@ function tickCarousels() {
     const next = (cur + 1) % imgs.length;
     carouselState.set(id, next);
 
-    img.src = imgs[next];
-    img.alt = img.alt.replace(/\d+$/, String(next + 2));
     document.querySelectorAll("#list .dot").forEach(d => {
       if (d.dataset.id === id) d.classList.toggle("active", Number(d.dataset.i) === next);
     });
+
+    carouselSwitching.add(id);
+    img.style.opacity = "0";
+    setTimeout(() => {
+      img.src = imgs[next];
+      img.alt = img.alt.replace(/\d+$/, String(next + 2));
+      img.style.opacity = "1";
+      carouselSwitching.delete(id);
+    }, 200);
   });
 }
 
@@ -1189,7 +1198,7 @@ async function init() {
     if (!to || !to.closest || !to.closest(".carousel")) carouselPaused.delete(c.dataset.cid);
   });
 
-  setInterval(tickCarousels, 3200);
+  setInterval(tickCarousels, 2200);
 
   const input = $("#searchInput");
   let t = null;
