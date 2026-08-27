@@ -110,7 +110,7 @@ const EN_ITEMS = {
   "老木匠的传家宝": {
     name: "Old Carpenter's Heirloom",
     desc: "Build a cabinet frame, then fit the shelves and drawers.",
-    detail: "1. A 20-slot container. Food does not stay fresh; items can stack and any item can be placed inside.\n2. Has a dedicated UI.\n3. An enormous display cabinet — show off every treasure you have gathered!\n4. Keeps the item's original drop animation.\nNote: Heirloom 1 and 2 are two looks of the same item; both can rotate in four directions."
+    detail: "1. A 20-slot container. Food does not stay fresh; items can stack and any item can be placed inside.\n2. Has a dedicated UI.\n3. An enormous display cabinet — show off every treasure you have gathered!\n4. Keeps the item's original drop animation.\nNote: In-game these are two separate recipes — Old Carpenter's Heirloom and Old Carpenter's Second Heirloom. Both work the same and look different; each can rotate in four directions."
   },
   "老渔翁的家藏珍": {
     name: "Old Fisherman's Treasured Aquarium",
@@ -120,7 +120,7 @@ const EN_ITEMS = {
   "王母娘娘的昆仑玉簪": {
     name: "Queen Mother's Kunlun Jade Hairpin",
     desc: "It is said the Queen Mother once used it to divide the Heavenly River...",
-    detail: "1. Right-click to toggle conversion between land and ocean.\n2. Has an unlimited turf container; turfs are used automatically when converting ocean back to land.\n3. Insert gems of different colors to unlock different-colored lights; the radius grows with more gems.\n4. +25% movement speed."
+    detail: "1. Right-click to toggle conversion between land and ocean.\n2. Has an unlimited turf container; turfs are used automatically when converting ocean back to land.\n3. Insert gems of different colors to unlock different-colored lights; the radius grows with more gems.\n4. +25% movement speed.\n5. Server admins can set crafting permission: All Players (default) or Admins Only."
   },
   "小木匠出师作": {
     name: "Young Carpenter's Masterpiece",
@@ -158,9 +158,9 @@ const EN_ITEMS = {
     detail: "1. Use Pack on buildings or items in the world to store them in the pot and carry them with you.\n2. Place the pot to unpack items; the pot becomes empty again.\n3. The pot is not randomly colored: after packing, the pot takes the shape of a tea cup — the packed item appears as a tea cup.\n4. Put a filled pot into a display cabinet, and the packed item is shown inside the cabinet.\n5. Can also be fired in batches at Master Huo's Kiln (2 or 20 pots, saving materials and time).\nA single vessel holds the rise and fall of every season."
   },
   "王母娘娘的照容仙镜": {
-    name: "Queen Mother's Reflection Mirror",
-    desc: "Kept at the Jade Pool vanity, this mirror can also reveal the illusions of the world.",
-    detail: "1. Activate the mirror to scan objects within range.\n2. Select a target to create a Mirror Image that can be carried or placed on display.\n3. A Mirror Image is only a reflection — no real function — and its size, height, facing, rotation, and animation speed can all be adjusted.\n4. It can also reflect the appearance of characters and creatures.\nKept at the Jade Pool vanity, this mirror can also reveal the illusions of the world."
+    name: "Queen Mother's Celestial Mirror",
+    desc: "A celestial dressing mirror that can reveal and reshape worldly forms.",
+    detail: "1. Activate the mirror to scan objects within range.\n2. Select a target to create a Mirror Image that can be carried or placed on display.\n3. A Mirror Image is only a reflection — no real function — and its size, height, facing, rotation, and animation speed can all be adjusted.\n4. It can also reflect the appearance of characters and creatures.\n5. A Mirror Image can be reskinned, flipped, reset, or undone.\n6. A Mirror Image cannot be copied again.\nA celestial dressing mirror that can reveal and reshape worldly forms."
   },
   "红墙": {
     name: "Red Wall",
