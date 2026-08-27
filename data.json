@@ -72,9 +72,7 @@
         "images/bigxians/icon/huaji.png",
         "images/bigxians/show/huaji_3.png",
         "images/bigxians/show/huaji_1.png",
-        "images/bigxians/show/huaji_2.png",
-        "images/bigxians/icon/bigxian_hua_ji_tie_yi.png",
-        "images/bigxians/icon/bigxian_hua_ji_xiang_cun.png"
+        "images/bigxians/show/huaji_2.png"
       ],
       "recipe": {
         "station": "炼金引擎[images/inventoryimages3/researchlab2.png]",
