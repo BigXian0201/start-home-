@@ -423,7 +423,6 @@ const carouselState = new Map();
 const carouselVisible = new Set();
 const carouselPaused = new Set();
 const carouselLastInteract = new Map();
-const carouselSwitching = new Set();
 const carouselObserver = new IntersectionObserver((entries) => {
   entries.forEach(en => {
     const cid = en.target.dataset.cid;
@@ -981,7 +980,11 @@ else {
   mediaHtml = `
     <div class="media">
       <div class="carousel" data-cid="${escapeHtml(item.id)}">
-        <img src="${escapeHtml(imgs[safeCur])}" alt="${escapeHtml(displayName)} ${uiText("altImage")} ${safeCur + 2}" loading="lazy" data-cid="${escapeHtml(item.id)}" />
+        <div class="carousel-track" style="transform:translateX(-${safeCur * 100}%)">
+          ${imgs.map((src, i) =>
+            `<img src="${escapeHtml(src)}" alt="${escapeHtml(displayName)} ${uiText("altImage")} ${i + 2}" loading="lazy" />`
+          ).join("")}
+        </div>
         <div class="carNav">
           <button class="carBtn" data-act="prev" data-id="${escapeHtml(item.id)}" aria-label="${escapeHtml(uiText("prev"))}">‹</button>
           <button class="carBtn" data-act="next" data-id="${escapeHtml(item.id)}" aria-label="${escapeHtml(uiText("next"))}">›</button>
@@ -1073,13 +1076,32 @@ function setupCarouselAuto() {
   });
 }
 
+function moveCarouselTo(id, next) {
+  const item = (state.data.items || []).find(x => x.id === id);
+  if (!item) return;
+  const allImgs = (Array.isArray(item.images) ? item.images.filter(Boolean) : []);
+  const imgs = allImgs.length > 1 ? allImgs.slice(1) : [];
+  if (!imgs.length) return;
+  const safe = ((next % imgs.length) + imgs.length) % imgs.length;
+  carouselState.set(id, safe);
+
+  let track = null;
+  document.querySelectorAll("#list .carousel").forEach(c => {
+    if (c.dataset.cid === id) track = c.querySelector(".carousel-track");
+  });
+  if (track) track.style.transform = `translateX(-${safe * 100}%)`;
+
+  document.querySelectorAll("#list .dot").forEach(d => {
+    if (d.dataset.id === id) d.classList.toggle("active", Number(d.dataset.i) === safe);
+  });
+}
+
 function tickCarousels() {
   const now = Date.now();
-  document.querySelectorAll("#list .carousel img[data-cid]").forEach(img => {
-    const id = img.dataset.cid;
+  document.querySelectorAll("#list .carousel[data-cid]").forEach(car => {
+    const id = car.dataset.cid;
     if (!carouselVisible.has(id) || carouselPaused.has(id)) return;
     if (now - (carouselLastInteract.get(id) || 0) < 4000) return;
-    if (carouselSwitching.has(id)) return;
 
     const item = (state.data.items || []).find(x => x.id === id);
     if (!item) return;
@@ -1087,22 +1109,7 @@ function tickCarousels() {
     const imgs = allImgs.length > 1 ? allImgs.slice(1) : [];
     if (imgs.length <= 1) return;
 
-    const cur = carouselState.get(id) || 0;
-    const next = (cur + 1) % imgs.length;
-    carouselState.set(id, next);
-
-    document.querySelectorAll("#list .dot").forEach(d => {
-      if (d.dataset.id === id) d.classList.toggle("active", Number(d.dataset.i) === next);
-    });
-
-    carouselSwitching.add(id);
-    img.style.opacity = "0";
-    setTimeout(() => {
-      img.src = imgs[next];
-      img.alt = img.alt.replace(/\d+$/, String(next + 2));
-      img.style.opacity = "1";
-      carouselSwitching.delete(id);
-    }, 200);
+    moveCarouselTo(id, (carouselState.get(id) || 0) + 1);
   });
 }
 
@@ -1183,8 +1190,7 @@ async function init() {
     }
 
     carouselLastInteract.set(id, Date.now());
-    carouselState.set(id, cur);
-    render();
+    moveCarouselTo(id, cur);
     });
 
   $("#list")?.addEventListener("mouseover", (e) => {

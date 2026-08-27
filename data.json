@@ -416,8 +416,8 @@
       "detail": "1)右键激活仙镜，可**照出范围内的物件**\n2)选中目标即可生成「**镜中幻形**」，能随身携带或摆放展示\n3)镜中幻形只有形影、没有功能，可**调整大小、高度、朝向、旋转与动画速度**\n4)也能**照出人物与生物的外形**\n5)可为幻形**更换皮肤、镜像翻转、还原或撤销操作**\n6)**镜中幻形无法再次复制**\n常设瑶池妆台梳鬓，亦可持镜照破世间虚妄。",
       "images": [
         "images/bigxians/icon/bigxian_women_queen_ui.png",
-        "images/bigxians/show/off_idle_nohandle.gif",
-        "images/bigxians/show/on_idle_nohandle.gif"
+        "images/bigxians/show/王母娘娘的照容仙镜off_idle_nohandle.gif",
+        "images/bigxians/show/王母娘娘的照容仙镜on_idle_nohandle.gif"
       ],
       "images": [
         "images/bigxians/icon/bigxian_women_queen_ui.png"

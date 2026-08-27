@@ -459,6 +459,7 @@
       border-radius: 14px;
       overflow:hidden;
       border:1px solid rgba(42,26,16,.10);
+      aspect-ratio: 1 / 1;
 
 
       background:
@@ -468,13 +469,18 @@
       box-shadow: 0 10px 26px rgba(42,26,16,.10);
     }
 
-    .carousel img{
+    .carousel-track{
+      display:flex;
+      height:100%;
+      transition: transform .35s ease;
+    }
+    .carousel-track img{
+      flex:0 0 100%;
       width:100%;
-      height:auto;
-      display:block;
+      height:100%;
+      object-fit:contain;
       max-width:100%;
       background: transparent;
-      transition: opacity .2s ease;
     }
 
     .carNav{
@@ -911,7 +917,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-9"></script>
+<script src="./app.js?v=20260828-10"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>
