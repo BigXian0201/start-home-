@@ -858,6 +858,7 @@ function renderDiary() {
   const q = state.query;
 
   if (!list) throw new Error("找不到容器 #list（请确认 index.html 中有 <section id='list'>）");
+  list.classList.remove("few");
   list.classList.add("diary-mode");
 
   if (!updates.length) {
@@ -1041,6 +1042,15 @@ else {
 
   const input = $("#searchInput");
   if (input && input.value !== state.query) input.value = state.query;
+  applyListMode();
+}
+
+function applyListMode() {
+  const list = $("#list");
+  if (!list || list.hidden || list.classList.contains("diary-mode")) return;
+  const cards = list.querySelectorAll(".card").length;
+  const maxCols = Math.max(1, Math.floor((list.clientWidth + 16) / 256));
+  list.classList.toggle("few", cards > 0 && cards < maxCols);
 }
 
 
@@ -1167,6 +1177,12 @@ async function init() {
     loadStateFromHash();
     const after = [state.view, state.mainline, state.activeCats.join(","), state.query].join("|");
     if (before !== after) render();
+  });
+
+  let resizeT = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(() => applyListMode(), 150);
   });
 }
 

@@ -283,6 +283,17 @@
       margin-left:auto;
       margin-right:auto;
     }
+    .list.few{
+      columns:auto;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 340px));
+      justify-content:center;
+      gap:16px;
+    }
+    .list.few .card{
+      margin-bottom:0;
+      break-inside:auto;
+    }
 
 
     .card{
@@ -900,7 +911,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-6"></script>
+<script src="./app.js?v=20260828-7"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>
