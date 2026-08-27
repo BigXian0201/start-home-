@@ -6,6 +6,18 @@
   <title>STARTHOME！开始建家！ - Mod 介绍页</title>
   <meta name="description" content="STARTHOME！开始建家！ 饥荒：联机版 Mod 介绍页（分类展示 / 全局搜索）" />
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("starthome_theme");
+        if (t !== "dark" && t !== "light") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+
   <style>
     :root{
 
@@ -540,6 +552,73 @@
     }
     .u-changes li::marker{color: rgba(184,157,68,.9);}
 
+    /* 深色主题 */
+    html[data-theme="dark"]{
+      --paper0: #171310;
+      --paper1: #1d1814;
+      --paper2: #241d17;
+      --card:   #261f19;
+      --card2:  #2b231c;
+      --ink:    #f2e6d8;
+      --muted:  #b7a592;
+      --line:   rgba(242,230,216,.12);
+      --warmGlow: rgba(184,157,68,.12);
+      --goldGlow: rgba(184,157,68,.16);
+      --tealGlow: rgba(74,163,154,.12);
+      --shadow: 0 14px 36px rgba(0,0,0,.45);
+      --shadow2: 0 20px 50px rgba(0,0,0,.55);
+    }
+    html[data-theme="dark"] body{ color: var(--ink); }
+    html[data-theme="dark"] .wrap::before{
+      background: linear-gradient(180deg, rgba(38,31,25,.55), rgba(29,24,20,.65));
+      border-color: rgba(242,230,216,.08);
+    }
+    html[data-theme="dark"] .search,
+    html[data-theme="dark"] .box,
+    html[data-theme="dark"] .tag,
+    html[data-theme="dark"] .pill,
+    html[data-theme="dark"] .btn{
+      background: rgba(255,255,255,.07);
+      border-color: rgba(242,230,216,.14);
+      color: var(--ink);
+    }
+    html[data-theme="dark"] .search input{ color: var(--ink); }
+    html[data-theme="dark"] .card{
+      background:
+        radial-gradient(900px 220px at 18% 0%, rgba(184,157,68,.12), transparent 60%),
+        linear-gradient(180deg, var(--card2), var(--card));
+    }
+    html[data-theme="dark"] .icon{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border-color: rgba(184,157,68,.30);
+    }
+    html[data-theme="dark"] .carousel{
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border-color: rgba(242,230,216,.12);
+    }
+    html[data-theme="dark"] .carBtn{
+      background: rgba(30,25,20,.72);
+      color: rgba(242,230,216,.92);
+      border-color: rgba(242,230,216,.18);
+    }
+    html[data-theme="dark"] .dot{ background: rgba(242,230,216,.18); }
+    html[data-theme="dark"] .placeholder,
+    html[data-theme="dark"] .empty,
+    html[data-theme="dark"] .u-date,
+    html[data-theme="dark"] .r-pill{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(242,230,216,.18);
+      color: var(--muted);
+    }
+    html[data-theme="dark"] .r-pill .r-name{ color: var(--ink); }
+    html[data-theme="dark"] .detail{ border-top-color: rgba(242,230,216,.12); }
+    html[data-theme="dark"] .hl{ background: rgba(184,157,68,.30); color: #ffe9b0; }
+    html[data-theme="dark"] .v b,
+    html[data-theme="dark"] .desc b{
+      color: #f0c060;
+      background: rgba(184,157,68,.18);
+    }
+
 
 header, .wrap{
   padding-left: max(16px, env(safe-area-inset-left));
@@ -639,6 +718,7 @@ header, .wrap{
         </div>
       <button class="btn" id="clearBtn">清空</button>
       <button class="btn" id="resetBtn">重置分类</button>
+      <button class="btn" id="themeBtn" title="切换深色/浅色主题">🌙</button>
       <button class="btn" id="langBtn" title="中英文切换 / Switch language">EN</button>
     </div>
   </div>
@@ -654,7 +734,7 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-2"></script>
+<script src="./app.js?v=20260828-3"></script>
 <script src="./sparkles.js"></script>
 </body>
 </html>

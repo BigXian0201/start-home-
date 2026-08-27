@@ -2,9 +2,10 @@ const $ = (sel) => document.querySelector(sel);
 
 const state = {
   data: null,
-  activeCat: "全部",
+  activeCats: [],
   query: "",
-  lang: "zh"
+  lang: "zh",
+  theme: "light"
 };
 
 const UI_TEXT = {
@@ -16,6 +17,7 @@ const UI_TEXT = {
     reset: "重置分类",
     langBtn: "EN",
     langTitle: "切换到英文 / Switch to English",
+    themeBtn: "切换深色/浅色主题",
     catAria: "分类栏",
     noImage: "未配置图片：在 data.json 的 images 数组里填入 images/xxx.png",
     recipe: "配方",
@@ -41,6 +43,7 @@ const UI_TEXT = {
     reset: "Reset Category",
     langBtn: "中文",
     langTitle: "切换到中文 / Switch to Chinese",
+    themeBtn: "Toggle dark/light theme",
     catAria: "Category bar",
     noImage: "No image: add images/xxx.png to the images array in data.json",
     recipe: "Recipe",
@@ -449,9 +452,24 @@ function highlightDetail(text, q) {
     .join("");
 }
 
+function autoBold(text) {
+  const parts = String(text ?? "").split(/(<\/?b>)/);
+  let inBold = false;
+  return parts.map(seg => {
+    if (seg === "<b>") { inBold = true; return seg; }
+    if (seg === "</b>") { inBold = false; return seg; }
+    if (inBold) return seg;
+    return seg
+      .replace(/(\d+(?:\.\d+)?\s*(?:格|个|种|块|只|级|件|条|张|天|层|slot|slots|level|levels|piece|pieces|block|blocks|day|days))/gi, "<b>$1</b>")
+      .replace(/([+\-]?\s?\d+(?:\.\d+)?\s*%)/g, "<b>$1</b>")
+      .replace(/([\u4e00-\u9fa5]{1,4}×\d+)/g, "<b>$1</b>")
+      .replace(/(永久保鲜|保鲜|可以堆叠|无上限|无限格|专属|批量|制作权限|管理员|只能在火师傅宝窑制作|无法再次复制|镜中幻形|打包|皮肤|升级|旋转|镜像翻转|还原|撤销|装饰位|装饰品跟雪人通用)/g, "<b>$1</b>");
+  }).join("");
+}
+
 function setHashFromState() {
   const params = new URLSearchParams();
-  if (state.activeCat && state.activeCat !== "全部") params.set("cat", state.activeCat);
+  if (state.activeCats.length) params.set("cat", state.activeCats.join(","));
   if (state.query) params.set("q", state.query);
   const hash = params.toString();
   location.hash = hash ? `#${hash}` : "";
@@ -460,7 +478,7 @@ function setHashFromState() {
 function loadStateFromHash() {
   const hash = (location.hash || "").replace(/^#/, "");
   const params = new URLSearchParams(hash);
-  state.activeCat = params.get("cat") || "全部";
+  state.activeCats = (params.get("cat") || "").split(",").filter(Boolean);
   state.query = params.get("q") || "";
 }
 
@@ -515,19 +533,44 @@ function renderCats() {
   const bar = $("#catBar");
   bar.innerHTML = "";
 
+  const counts = {};
+  (state.data.items || []).forEach(it => {
+    getCats(it).forEach(c => { counts[c] = (counts[c] || 0) + 1; });
+  });
+
   cats.forEach(cat => {
     const el = document.createElement("div");
-    el.className = "chip" + (cat === state.activeCat ? " active" : "");
-    el.textContent = enCat(cat);
+    const isAll = cat === "全部";
+    const active = isAll ? state.activeCats.length === 0 : state.activeCats.includes(cat);
+    el.className = "chip" + (active ? " active" : "");
+
+    const count = cat === "更新日记"
+      ? (state.data.updates || []).length
+      : (counts[cat] || 0);
+    el.textContent = count ? `${enCat(cat)} ${count}` : enCat(cat);
 
     el.addEventListener("click", () => {
-      state.activeCat = cat;
+      if (isAll) {
+        state.activeCats = [];
+      } else if (cat === "更新日记") {
+        state.activeCats = [cat];
+      } else {
+        state.activeCats = state.activeCats.filter(c => c !== "更新日记");
+        const i = state.activeCats.indexOf(cat);
+        if (i >= 0) state.activeCats.splice(i, 1);
+        else state.activeCats.push(cat);
+      }
       setHashFromState();
       render();
     });
 
     bar.appendChild(el);
   });
+}
+
+function activeCatLabel() {
+  if (!state.activeCats.length) return enCat("全部");
+  return state.activeCats.map(enCat).join(" + ");
 }
 
 function applyLang() {
@@ -553,8 +596,17 @@ function applyLang() {
     langBtn.title = uiText("langTitle");
   }
 
+  const themeBtn = $("#themeBtn");
+  if (themeBtn) themeBtn.title = uiText("themeBtn");
+
   const catBar = $("#catBar");
   if (catBar) catBar.setAttribute("aria-label", uiText("catAria"));
+}
+
+function applyTheme() {
+  document.documentElement.dataset.theme = state.theme;
+  const btn = $("#themeBtn");
+  if (btn) btn.textContent = state.theme === "dark" ? "☀️" : "🌙";
 }
 
 function parseInlineImageToken(text) {
@@ -640,7 +692,7 @@ if (station) {
 
 function matchItem(item) {
   const cs = getCats(item);
-  const catOk = (state.activeCat === "全部") || cs.includes(state.activeCat);
+  const catOk = state.activeCats.length === 0 || cs.some(c => state.activeCats.includes(c));
   if (!catOk) return false;
 
   const q = normalize(state.query);
@@ -712,14 +764,14 @@ function renderDiary() {
   }
 
   $("#resultHint").textContent = uiText("diaryResult")(updates.length, (state.data.updates || []).length);
-  $("#activeState").textContent = uiText("activeState")(enCat(state.activeCat || "全部"), state.query);
+  $("#activeState").textContent = uiText("activeState")(activeCatLabel(), state.query);
 
   const input = $("#searchInput");
   if (input && input.value !== state.query) input.value = state.query;
 }
 
 function renderList() {
-  if (state.activeCat === "更新日记") {
+  if (state.activeCats.includes("更新日记")) {
     renderDiary();
     return;
   }
@@ -823,7 +875,7 @@ else {
       const detailHtml = introLines.length ? `
         <div class="detail">
           <div class="k">${escapeHtml(uiText("detail"))}</div>
-          <div class="v">${highlightDetail(introLines.join("\n"), q)}</div>
+          <div class="v">${highlightDetail(autoBold(introLines.join("\n")), q)}</div>
         </div>
       ` : "";
 
@@ -854,7 +906,7 @@ else {
   }
 
   $("#resultHint").textContent = uiText("resultHint")(items.length, (state.data.items || []).length);
-  $("#activeState").textContent = uiText("activeState")(enCat(state.activeCat || "全部"), state.query);
+  $("#activeState").textContent = uiText("activeState")(activeCatLabel(), state.query);
 
   const input = $("#searchInput");
   if (input && input.value !== state.query) input.value = state.query;
@@ -869,6 +921,10 @@ function render() {
 async function init() {
   try {
     if (localStorage.getItem("starthome_lang") === "en") state.lang = "en";
+    const savedTheme = localStorage.getItem("starthome_theme");
+    state.theme = (savedTheme === "dark" || savedTheme === "light")
+      ? savedTheme
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   } catch (e) {}
 
   loadStateFromHash();
@@ -882,6 +938,7 @@ async function init() {
   const cats = Array.from(set);
 
   applyLang();
+  applyTheme();
   renderHeader();
   render();
 
@@ -936,9 +993,15 @@ async function init() {
   });
 
   $("#resetBtn")?.addEventListener("click", () => {
-    state.activeCat = "全部";
+    state.activeCats = [];
     setHashFromState();
     render();
+  });
+
+  $("#themeBtn")?.addEventListener("click", () => {
+    state.theme = state.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("starthome_theme", state.theme); } catch (e) {}
+    applyTheme();
   });
 
   $("#langBtn")?.addEventListener("click", () => {
@@ -949,10 +1012,10 @@ async function init() {
   });
 
   window.addEventListener("hashchange", () => {
-    const beforeCat = state.activeCat;
+    const beforeCats = state.activeCats.join(",");
     const beforeQ = state.query;
     loadStateFromHash();
-    if (beforeCat !== state.activeCat || beforeQ !== state.query) render();
+    if (beforeCats !== state.activeCats.join(",") || beforeQ !== state.query) render();
   });
 }
 
