@@ -95,6 +95,7 @@
       "detail": "1)20格子的箱子、不保鲜、可以堆叠、能放置任意物品\n2)配有专属ui\n3)超超超极大的展示柜子。能把你搜罗来的宝贝全部都展示出来！\n4)保留该物品原有的落地动画效果\n注：传家宝一/二为同一物品的两种外观，均可四向旋转",
       "images": [
         "images/bigxians/icon/chuanjiabao.png",
+        "images/bigxians/show/老木匠idle.gif",
         "images/bigxians/show/chuanjiabao_1.png",
         "images/bigxians/show/chuanjiabao_2.png",
         "images/bigxians/show/chuanjiabao_3.png"
