@@ -37,19 +37,22 @@
       "name": "市井天工",
       "tagline": "凡尘里的鬼斧神工",
       "desc": "烟火民居器物：中式桌椅、展柜花架、茶具陶艺、花艺绿植、收纳保鲜家具。配套窑炉烧制系统，可手工/批量烧制粘土建材与软装摆件。",
-      "bg": "images/bigxians/show/老木匠idle.gif"
+      "bg": "images/bigxians/show/老木匠idle.gif",
+      "bgStyle": "object-fit:cover;padding:10%;box-sizing:border-box"
     },
     {
       "name": "仙尘旧物",
       "tagline": "仙人衣袖间抖落的尘埃与旧器",
       "desc": "神话仙韵道具：昆仑玉簪、山海宝壶。自由修改海陆地形、一键打包整座建筑，自带地皮存储与移速增益。",
-      "bg": "images/bigxians/show/王母娘娘的照容仙镜on_idle_nohandle.gif"
+      "bg": "images/bigxians/show/王母娘娘的照容仙镜on_idle_nohandle.gif",
+      "bgStyle": "object-fit:contain;object-position:right bottom"
     },
     {
       "name": "浮世偶遇",
       "tagline": "尘世间偶遇的零散灵物",
       "desc": "沉木、碎石、晶块、鱼骨等小型景观素材，可放入鱼缸、雪人槽位自由造景。",
-      "bg": "images/bigxians/show2/茶壶茶杯.png"
+      "bg": "images/bigxians/show2/茶壶茶杯.png",
+      "bgStyle": "object-fit:contain;object-position:right center"
     }
   ],
   "categories": [
