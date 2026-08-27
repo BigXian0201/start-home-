@@ -102,8 +102,7 @@ const EN_MAINLINES = {
 
 const EN_HOME = {
   lead: "Made for base-building players who love scenery, collections and oriental soft furnishing. Focused on Chinese-style decor, landscape props and building utilities to create your own oriental courtyard.",
-  credits: "Art & Animation: BigXian喵大仙\nCode thanks: San, mooncake, Huahua\nDST art commissions open — furniture, items, character textures",
-  links: "📺 Bilibili: 喵大仙BigXian\n📕 Xiaohongshu: 喵大仙BigXian\n💬 Feedback QQ group: 199540863"
+  credits: "All art & animation: BigXian\nCoding thanks to: San, mooncake, Huahua\nDST-style art commissions are open for furniture, items and character textures."
 };
 
 const EN_STATIONS = {
@@ -604,7 +603,12 @@ function renderHome() {
     <article class="homeIntro card homeThanks">
       <h3 class="homeSecTitle">${escapeHtml(uiText("homeSecThanks"))}</h3>
       ${intro.credits ? `<div class="homeCredits">${escapeHtml((enHome && enHome.credits) || intro.credits)}</div>` : ""}
-      ${intro.links ? `<div class="homeLinks">${escapeHtml((enHome && enHome.links) || intro.links)}</div>` : ""}
+      ${Array.isArray(intro.links) && intro.links.length ? `
+        <div class="homeLinks">
+          ${intro.links.map(l =>
+            `<a class="homeLink" href="${escapeHtml(l.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(l.label || "")}</a>`
+          ).join("")}
+        </div>` : ""}
     </article>
     <button class="homeAllBtn" id="homeAllBtn">${escapeHtml(uiText("viewAll"))}</button>
   `;
