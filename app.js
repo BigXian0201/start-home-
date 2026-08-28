@@ -572,8 +572,8 @@ function renderHeader() {
     <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;">
       ${linkHtml}
     </div>
-    ${mod.desc ? `<div style="margin-top:10px">${escapeHtml(mod.desc)}</div>` : ""}
-    ${mod.note ? `<div style="opacity:.85;font-size:12px;">${escapeHtml(mod.note)}</div>` : ""}
+    ${mod.desc ? `<div style="margin-top:10px;text-align:center">${escapeHtml(mod.desc)}</div>` : ""}
+    ${mod.note ? `<div style="opacity:.85;font-size:12px;text-align:center">${escapeHtml(mod.note)}</div>` : ""}
   `;
 }
 
