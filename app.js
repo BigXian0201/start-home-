@@ -615,16 +615,15 @@ function renderHome() {
             ${lines.map(c => `<span class="homeCreditLine">${escapeHtml(c)}</span>`).join("")}
           </div>` : "";
       })()}
-      ${Array.isArray(intro.links) && intro.links.length ? `
+      ${(Array.isArray(intro.links) && intro.links.length) || (intro.support && intro.support.image) ? `
         <div class="homeLinks">
-          ${intro.links.map(l =>
+          ${Array.isArray(intro.links) ? intro.links.map(l =>
             `<a class="homeLink" href="${escapeHtml(l.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(l.label || "")}</a>`
-          ).join("")}
+          ).join("") : ""}
+          ${intro.support && intro.support.image ? `
+            <button class="homeLink" id="homeSupportBtn">${escapeHtml(intro.support.label || "感谢老板支持")}</button>` : ""}
         </div>` : ""}
-      ${intro.support && intro.support.image ? `
-        <button class="homeSupportBtn" id="homeSupportBtn">${escapeHtml(intro.support.label || "感谢老板支持")}</button>` : ""}
     </article>
-    <button class="homeAllBtn" id="homeAllBtn">${escapeHtml(uiText("viewAll"))}</button>
   `;
 }
 
@@ -1178,11 +1177,6 @@ async function init() {
   render();
 
   $("#home")?.addEventListener("click", (e) => {
-    const allBtn = e.target.closest("#homeAllBtn");
-    if (allBtn) {
-      enterList("");
-      return;
-    }
     const catEl = e.target.closest(".homeCat");
     if (catEl && catEl.dataset.main) enterList(catEl.dataset.main);
   });
