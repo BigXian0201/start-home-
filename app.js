@@ -454,7 +454,7 @@ function itemSearchText(item) {
     item.name,
     item.desc,
     item.category,
-    stripHtml(item.detail),
+    stripHtml(item.detail).replace(/\*\*/g, ""),
     JSON.stringify(item.recipe || {}),
     item.notes
   ];
@@ -497,7 +497,8 @@ function highlightDetail(text, q) {
 }
 
 function autoBold(text) {
-  const parts = String(text ?? "").split(/(<\/?b>)/);
+  const converted = String(text ?? "").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+  const parts = converted.split(/(<\/?b>)/);
   let inBold = false;
   return parts.map(seg => {
     if (seg === "<b>") { inBold = true; return seg; }
