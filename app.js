@@ -621,6 +621,8 @@ function renderHome() {
             `<a class="homeLink" href="${escapeHtml(l.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(l.label || "")}</a>`
           ).join("")}
         </div>` : ""}
+      ${intro.support && intro.support.image ? `
+        <button class="homeSupportBtn" id="homeSupportBtn">${escapeHtml(intro.support.label || "感谢老板支持")}</button>` : ""}
     </article>
     <button class="homeAllBtn" id="homeAllBtn">${escapeHtml(uiText("viewAll"))}</button>
   `;
@@ -666,6 +668,7 @@ function renderMainlines() {
 
 function setViewUI() {
   const home = state.view === "home";
+  document.body.classList.toggle("view-home", home);
   $("#headBar").hidden = home;
   $("#home").hidden = !home;
   $("#list").hidden = home;
@@ -1264,6 +1267,23 @@ async function init() {
     state.theme = state.theme === "dark" ? "light" : "dark";
     try { localStorage.setItem("starthome_theme", state.theme); } catch (e) {}
     applyTheme();
+  });
+
+  const supportModal = $("#supportModal");
+  $("#homeSupportBtn")?.addEventListener("click", () => {
+    const img = $("#supportQr");
+    const support = state.data.intro && state.data.intro.support;
+    if (img && support && support.image) img.src = support.image;
+    if (supportModal) supportModal.hidden = false;
+  });
+  $("#supportClose")?.addEventListener("click", () => {
+    if (supportModal) supportModal.hidden = true;
+  });
+  supportModal?.addEventListener("click", (e) => {
+    if (e.target === supportModal) supportModal.hidden = true;
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && supportModal && !supportModal.hidden) supportModal.hidden = true;
   });
 
   $("#langBtn")?.addEventListener("click", () => {

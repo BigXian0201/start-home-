@@ -82,6 +82,13 @@
         repeating-linear-gradient( 90deg, rgba(42,26,16,.010) 0px, rgba(42,26,16,.010) 1px, transparent 1px, transparent 9px);
       mix-blend-mode: multiply;
     }
+    body.view-home::before{
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><g fill='none' stroke='%23b89d44' stroke-width='1.1' opacity='.28'><rect x='14' y='14' width='44' height='44' rx='8'/><circle cx='36' cy='36' r='11'/></g></svg>") repeat,
+        repeating-linear-gradient(  0deg, rgba(42,26,16,.012) 0px, rgba(42,26,16,.012) 1px, transparent 1px, transparent 7px),
+        repeating-linear-gradient( 90deg, rgba(42,26,16,.010) 0px, rgba(42,26,16,.010) 1px, transparent 1px, transparent 9px);
+      opacity:.14;
+    }
 
     a{color:inherit}
 
@@ -680,6 +687,69 @@
       border-color: rgba(184,157,68,.5);
       background: rgba(255,255,255,.85);
     }
+    .homeSupportBtn{
+      margin-top:14px;
+      padding:9px 24px;
+      border:1px solid rgba(184,157,68,.6);
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:1px;
+      cursor:pointer;
+      color: rgb(47,23,10);
+      background:
+        radial-gradient(16px 16px at 28% 28%, rgba(255,255,255,.35), transparent 60%),
+        linear-gradient(180deg, rgba(230,205,120,1), rgba(184,157,68,1));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.35),
+        0 6px 16px rgba(0,0,0,.15);
+      transition:.15s ease;
+    }
+    .homeSupportBtn:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+    .modalMask{
+      position:fixed;
+      inset:0;
+      z-index:100;
+      background: rgba(20,12,6,.62);
+      backdrop-filter: blur(3px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .modalBox{
+      position:relative;
+      max-width:min(420px, 92vw);
+      background: var(--card2);
+      border:1px solid rgba(184,157,68,.45);
+      border-radius:16px;
+      padding:22px;
+      box-shadow: var(--shadow2);
+    }
+    .modalBox img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+    }
+    .modalClose{
+      position:absolute;
+      top:-14px;
+      right:-14px;
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      border:1px solid rgba(42,26,16,.18);
+      background: #fffaf2;
+      color: rgb(73,40,20);
+      font-size:18px;
+      line-height:1;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+    }
     .homeCredits{
       display:flex;
       flex-wrap:wrap;
@@ -966,6 +1036,11 @@
       border-color: rgba(242,230,216,.18);
       color: var(--ink);
     }
+    html[data-theme="dark"] .modalClose{
+      background: #2b231c;
+      color: #f2e6d8;
+      border-color: rgba(242,230,216,.2);
+    }
 
 
 header, .wrap{
@@ -1086,7 +1161,14 @@ header, .wrap{
   <div class="footer" id="footer"></div>
 </main>
 
-<script src="./app.js?v=20260828-23"></script>
+<script src="./app.js?v=20260828-24"></script>
 <script src="./sparkles.js"></script>
+
+<div class="modalMask" id="supportModal" hidden>
+  <div class="modalBox">
+    <button class="modalClose" id="supportClose" aria-label="关闭">×</button>
+    <img id="supportQr" alt="收款二维码" />
+  </div>
+</div>
 </body>
 </html>

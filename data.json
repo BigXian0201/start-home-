@@ -30,7 +30,11 @@
         "label": "🐦 X(Twitter)",
         "url": "https://x.com/BigXian00"
       }
-    ]
+    ],
+    "support": {
+      "label": "感谢老板支持",
+      "image": "images/bigxians/show2/收款二维码.png"
+    }
   },
   "mainlines": [
     {
