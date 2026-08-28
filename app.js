@@ -568,7 +568,7 @@ function renderHeader() {
     .join(" ");
 
   $("#footer").innerHTML = `
-    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;">
       ${linkHtml}
     </div>
     ${mod.desc ? `<div style="margin-top:10px">${escapeHtml(mod.desc)}</div>` : ""}
