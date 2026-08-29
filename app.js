@@ -584,7 +584,33 @@ function renderHome() {
   const mains = state.data.mainlines || [];
   const mod = state.data.mod || {};
   const enHome = isEn() ? EN_HOME : null;
+  const watermarkSource = [
+    intro.title,
+    (enHome && enHome.lead) || intro.lead,
+    (enHome && enHome.credits) || intro.credits,
+    mod.name,
+    mod.desc,
+    mod.note,
+    ...mains.flatMap(m => {
+      const en = enMainlineObj(m);
+      return [enMainline(m.name), (en && en.tagline) || m.tagline, (en && en.desc) || m.desc];
+    })
+  ]
+    .filter(Boolean)
+    .flatMap(value => String(value).split(/[\n。！？；，,.;!?]+/))
+    .map(value => value.trim())
+    .filter(value => value.length >= 2);
+  const watermarkPool = watermarkSource.length ? watermarkSource : ["STARTHOME"];
+  const watermarkPositions = [4, 12, 21, 30, 39, 48, 57, 66, 75, 84, 92, 16, 53, 70, 27, 88];
+  const watermarkSizes = [13, 18, 24, 15, 21, 12, 27, 16, 20, 14, 23, 17, 26, 13, 19, 22];
+  const watermarkDurations = [28, 34, 25, 31, 38, 27, 36, 29, 33, 24, 40, 30, 35, 26, 32, 37];
+  const watermarkHtml = Array.from({ length: 16 }, (_, index) => {
+    const text = watermarkPool[index % watermarkPool.length];
+    const rotate = index % 3 === 0 ? -2 : index % 3 === 1 ? 1 : 3;
+    return `<span class="homeWatermarkText" style="--left:${watermarkPositions[index]}%;--size:${watermarkSizes[index]}px;--duration:${watermarkDurations[index]}s;--delay:-${index * 2.4}s;--rotate:${rotate}deg">${escapeHtml(text)}</span>`;
+  }).join("");
   home.innerHTML = `
+    <div class="homeWatermark" aria-hidden="true">${watermarkHtml}</div>
     <article class="homeIntro card">
       ${intro.image ? `<img class="homeBanner" src="${escapeHtml(intro.image)}" alt="" />` : ""}
       <h2 class="homeTitle">${escapeHtml(intro.title || uiText("title"))}</h2>
